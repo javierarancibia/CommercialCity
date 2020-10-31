@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :users
+  get "dashboard", to: 'dashboard#index', as: 'dashboard'
+  get 'dashboard/estates'
+  get 'dashboard/reports'
+
   resources :estates
+  devise_for :users
+  root to: 'public#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root to: 'public#index'
 end

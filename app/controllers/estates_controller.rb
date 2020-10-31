@@ -1,5 +1,6 @@
 class EstatesController < ApplicationController
   before_action :set_estate, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :destroy]
 
   # GET /estates
   # GET /estates.json
@@ -25,6 +26,7 @@ class EstatesController < ApplicationController
   # POST /estates.json
   def create
     @estate = Estate.new(estate_params)
+    @estate.user_id = current_user.id
 
     respond_to do |format|
       if @estate.save
