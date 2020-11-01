@@ -1,6 +1,15 @@
 <%= form_with(model: estate, local: true) do |form| %>
-  
-  <%= render "layouts/validation", item: @property %>
+  <% if estate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(estate.errors.count, "error") %> prohibited this estate from being saved:</h2>
+
+      <ul>
+      <% estate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <div class="form-group">
     <%= form.label :name %>
@@ -28,6 +37,20 @@
   </div>
 
   <div class="form-group">
-    <%= form.submit "Submit", class: "btn btn-lg btn-success" %>
+    <%= form.label :photo %>
+    <%= form.file_field :photos, multiple: true, class: "form-control" %>
   </div>
+
+  <div class="form-group">
+    <%= form.submit "Guardar Propiedad", class: "btn btn-lg btn-success" %>
+  </div>
+
+  <div class="mt-4">
+    <% @estate.photos.each do |photo| %>
+      <%= image_tag(photo, size: '480x260') %>
+    <% end %>
+  </div>
+
+
+
 <% end %>

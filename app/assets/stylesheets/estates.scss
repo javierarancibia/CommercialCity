@@ -1,3 +1,31 @@
 // Place all the styles related to the Estates controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.property-main-photo {
+    height: 500px;
+    background-size: cover;
+}
+
+body {
+    background-color: #eee
+}
+
+.carousel-inner img {
+    width: 100%
+}
+
+.carousel-item img {
+    width: 1200px;
+    height: 628px !important;
+    margin-top: 200px;
+}
+
+.carousel-inner{
+    position: fixed;
+}
+
+.show-text{
+    margin-top: 200px;
+    margin-bottom: 300px;
+}

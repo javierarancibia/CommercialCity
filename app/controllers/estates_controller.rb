@@ -1,16 +1,18 @@
 class EstatesController < ApplicationController
   before_action :set_estate, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :destroy]
+  before_action :set_sidebar, except: [:show]
 
   # GET /estates
   # GET /estates.json
   def index
-    @estates = Estate.all
+    @estates = Estate.with_attached_photos.all
   end
 
   # GET /estates/1
   # GET /estates/1.json
   def show
+    @agent = @estate.user
   end
 
   # GET /estates/new
@@ -69,8 +71,12 @@ class EstatesController < ApplicationController
       @estate = Estate.find(params[:id])
     end
 
+    def set_sidebar
+        @show_sidebar = true
+    end
+
     # Only allow a list of trusted parameters through.
     def estate_params
-      params.require(:estate).permit(:name, :address, :price, :rooms, :bathrooms)
+      params.require(:estate).permit(:name, :address, :price, :rooms, :bathrooms, photos: [])
     end
 end

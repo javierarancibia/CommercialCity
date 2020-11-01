@@ -7,7 +7,6 @@ class CreateEstates < ActiveRecord::Migration[5.2]
       t.integer :price
       t.integer :rooms
       t.integer :bathrooms
-      t.string :photo
 
       t.timestamps
     end

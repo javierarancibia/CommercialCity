@@ -2,10 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-    font-size: .875rem;
-  }
-  
+.show-sidebar {   
   .feather {
     width: 16px;
     height: 16px;
@@ -105,4 +102,5 @@ body {
     border-color: transparent;
     box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
   }
+}
   

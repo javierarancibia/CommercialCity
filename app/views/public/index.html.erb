@@ -11,17 +11,29 @@
 
   <div class="container">
     <!-- Example row of columns -->
+    <% @estates.each do |estate| %>
+      <tr>
+        <td><%= estate.name %></td>
+        <td><%= estate.address %></td>
+        <td><%= estate.price %></td>
+        <td><%= estate.rooms %></td>
+        <td><%= estate.bathrooms %></td>
+
+        <% estate.photos.each do |photo| %>
+          <td><%= image_tag photo.variant(resize: '120x80') %></td>
+        <% end %>
+        <td><%= link_to 'Show', estate %></td>
+        <td><%= link_to 'Edit', edit_estate_path(estate) %></td>
+        <td><%= link_to 'Destroy', estate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+
+
+
+
+
+
     <div class="row">
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-      </div>
       <div class="col-md-4">
         <h2>Heading</h2>
         <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
@@ -31,6 +43,16 @@
 
     <hr>
 
-  </div> <!-- /container -->
-
-</main>
+<div class="row row-cols-1 row-cols-md-3">
+  <% @estates.each do |estate| %>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <%= image_tag estate.photos[0], class: 'card-img-top', width: 300 if estate.photos.attached?%>
+          <div class="card-body">
+            <h2 class="card-title"> <%= estate.address %></h2>
+            <p class="card-text">Size: <%= estate.rooms %><br>$<%= estate.price %></p><%= estate.rooms %>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
