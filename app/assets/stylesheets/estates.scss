@@ -26,7 +26,6 @@ body {
 }
 
 .show-text{
-    margin-top: 200px;
     margin-bottom: 300px;
 }
 
@@ -46,26 +45,23 @@ body {
   }
 
   .carousel-item {
-    height: 90vh;
+    height: 100%;
     min-height: 350px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
   
-  .show-header{
-      margin-top: 100 px;
-      padding-top: 200px;
-  }
-
   .carousel-control-prev{
       height: 75%;
       top: 150%;
+      background: none !important;
   }
 
   .carousel-control-next{
     height: 75%;
     top: 150%;
+    background: none !important;
   }
 
   .carousel-inner > .carousel-item > img {

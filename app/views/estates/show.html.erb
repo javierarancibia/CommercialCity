@@ -1,4 +1,4 @@
-<div class="container mt-5 pt-5 show-header">
+<div class="container pt-3 show-header">
   <section class="py-5">
     <h1 class="display-4"><%= @estate.address %></h1>
     <p class="lead">The background images for the slider are set directly in the HTML using inline CSS. The images in this snippet are from <a href="https://unsplash.com">Unsplash</a>, taken by <a href="https://unsplash.com/@joannakosinska">Joanna Kosinska</a>!</p>
@@ -37,9 +37,9 @@
   </a>
 </div>
 
-  <div class="container show-text">
-    <div class="row">
-      <div class="col-8">
+<div class="container show-text">
+  <div class="row">
+    <div class="col-8">
 
         <p>
           <strong>Name:</strong>
@@ -66,16 +66,16 @@
           <%= @estate.bathrooms %>
         </p>
 
-      </div>
 
-          <div class="col-4">
+        <div class="col-4">
             <%= render "estates/agent_details" %>
-          </div>
-
-        <%= link_to 'Edit', edit_estate_path(@estate) %> |
-        <%= link_to 'Back', estates_path %>
+            <%= link_to 'Edit', edit_estate_path(@estate) %> |
+            <%= link_to 'Back', estates_path %>
+        </div>
     </div>
   </div>
+</div>
+
 
 <div class="container mt-5">
   <%#= image_tag @estate.photos.first.variant(resize: '900x1500') if @estate.photos.attached? %>
