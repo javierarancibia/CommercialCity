@@ -1,11 +1,11 @@
-<section class="py-5">
-  <div class="container">
-    <h1 class="display-4">Full Page Image Slider</h1>
+<div class="container mt-5 pt-5 show-header">
+  <section class="py-5">
+    <h1 class="display-4"><%= @estate.address %></h1>
     <p class="lead">The background images for the slider are set directly in the HTML using inline CSS. The images in this snippet are from <a href="https://unsplash.com">Unsplash</a>, taken by <a href="https://unsplash.com/@joannakosinska">Joanna Kosinska</a>!</p>
-  </div>
-</section>
+  </section>
+</div>
 
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" align="center">
+<div id="carouselExampleControls" class="carousel slide container" data-ride="carousel" align="center">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <%= @estate.photos.first.nil? ? image_tag("house.jpg") : image_tag(@estate.photos.first) %>
@@ -22,6 +22,10 @@
     <div class="carousel-item">
       <%= @estate.photos.fifth.nil? ? image_tag("house.jpg") : image_tag(@estate.photos.fifth) %>
     </div>
+        <div class="carousel-item">
+      <%= @estate.photos[5].nil? ? image_tag("house.jpg") : image_tag(@estate.photos[5]) %>
+    </div>
+
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

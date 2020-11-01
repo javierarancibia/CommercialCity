@@ -29,3 +29,46 @@ body {
     margin-top: 200px;
     margin-bottom: 300px;
 }
+
+.carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .carousel-item img {
+    width:100%;
+    height: 300px;
+  }
+
+  .carousel-item {
+    height: 90vh;
+    min-height: 350px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .show-header{
+      margin-top: 100 px;
+      padding-top: 200px;
+  }
+
+  .carousel-control-prev{
+      height: 75%;
+      top: 150%;
+  }
+
+  .carousel-control-next{
+    height: 75%;
+    top: 150%;
+  }
+
+  .carousel-inner > .carousel-item > img {
+    margin: 0 auto;
+  }
+
