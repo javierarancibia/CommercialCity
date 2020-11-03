@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable
          
-  has_many :estates
   has_one_attached :avatar
+  has_many :estates
 
   def avatar_thumbnail
     if avatar.attached?
