@@ -5,12 +5,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable
          
   has_many :estates
+  has_one_attached :avatar
 
-  def full_name
-    "#{first_name} #{last_name}"
-  end
-
-  def company
-    "test company"
+  def avatar_thumbnail
+    if avatar.attached?
+      avatar.variant(resize: '150x150!').processed
+    else 
+      "default_profileB.jpg"
+    end
   end
 end

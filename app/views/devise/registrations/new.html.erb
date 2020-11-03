@@ -3,9 +3,24 @@
     <h1 class="h3 mb-3 font-weight-normal">Registrate</h1>
     <%= render "devise/shared/error_messages", resource: resource %>
 
+      
+
+      <div class="field">
+        <% if resource.avatar.attached? %>
+          <%= image_tag(resource.avatar) %>
+        <% else %>
+          <%= image_tag ("default_profileB.jpg")%>
+        <% end %>
+      </div>
+
+      <div class= "field">
+        <%= f.file_field :avatar %>
+      </div>
+
       <%= f.text_field :first_name, autofocus: true, class: "form-control", placeholder: "Tu Nombre" %>
 
       <%= f.text_field :last_name, class: "form-control", placeholder: "Tu Apellido" %>
+
 
       <%= f.email_field :email, autocomplete: "email", class: "form-control", placeholder: "Tu Correo" %>
 

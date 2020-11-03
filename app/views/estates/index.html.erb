@@ -22,10 +22,9 @@
         <td><%= estate.price %></td>
         <td><%= estate.rooms %></td>
         <td><%= estate.bathrooms %></td>
+        <td><%= image_tag estate.photos[0].variant(resize: '120x80') %></td>
 
-        <% estate.photos.each do |photo| %>
-          <td><%= image_tag photo.variant(resize: '120x80') %></td>
-        <% end %>
+  
         <td><%= link_to 'Show', estate %></td>
         <td><%= link_to 'Edit', edit_estate_path(estate) %></td>
         <td><%= link_to 'Destroy', estate, method: :delete, data: { confirm: 'Are you sure?' } %></td>

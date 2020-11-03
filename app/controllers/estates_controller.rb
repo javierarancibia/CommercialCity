@@ -12,7 +12,7 @@ class EstatesController < ApplicationController
   # GET /estates/1
   # GET /estates/1.json
   def show
-    @agent = @estate.user
+    @user = @estate.user
   end
 
   # GET /estates/new
@@ -77,6 +77,6 @@ class EstatesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def estate_params
-      params.require(:estate).permit(:name, :address, :price, :rooms, :bathrooms, photos: [])
+      params.require(:estate).permit(:name, :address, :price, :rooms, :bathrooms, :parking, :storage, :description, photos: [])
     end
 end

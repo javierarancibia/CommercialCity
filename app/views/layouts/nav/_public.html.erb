@@ -13,27 +13,14 @@
           <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
         <% end %>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-        <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <% if user_signed_in? %>
+      <% if current_user %>
         <li class="nav-item">
             <%= link_to  "Cerrar Sesion", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
         <li class="nav-item">
             <%= link_to  "Edita tu perfil", edit_user_registration_path, class: "nav-link" %>
         </li>
+        <%= image_tag(current_user.avatar_thumbnail) %>
       <% else %>
         <li class="nav-item">
             <%= link_to  "Inicia Sesion", new_user_session_path, class: "nav-link" %>
