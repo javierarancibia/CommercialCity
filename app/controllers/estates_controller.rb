@@ -7,6 +7,7 @@ class EstatesController < ApplicationController
   # GET /estates.json
   def index
     @estates = Estate.with_attached_photos.all
+    
   end
 
   # GET /estates/1
@@ -18,10 +19,12 @@ class EstatesController < ApplicationController
   # GET /estates/new
   def new
     @estate = Estate.new
+    @locations = Location.all
   end
 
   # GET /estates/1/edit
   def edit
+    @locations = Location.all
   end
 
   # POST /estates
@@ -77,6 +80,8 @@ class EstatesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def estate_params
-      params.require(:estate).permit(:name, :address, :price, :rooms, :bathrooms, :parking, :storage, :description, photos: [])
+      params.require(:estate).permit(:name, :address, :price, :rooms, :bathrooms, :parking, :storage, :description, :location_id, photos: [])
     end
+
+    
 end
