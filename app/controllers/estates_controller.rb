@@ -6,8 +6,12 @@ class EstatesController < ApplicationController
   # GET /estates
   # GET /estates.json
   def index
-    @estates = Estate.with_attached_photos.all
-    @locations = Location.all
+    @q = Estate.ransack(params[:q])
+    @estates = @q.result.includes(:location, :category, :type)
+    # @estates = Estate.with_attached_photos.all
+    # @locations = Location.all
+    # @types = Type.all
+    # @categories = Category.all
   end
 
   # GET /estates/1

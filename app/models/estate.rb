@@ -6,4 +6,5 @@ class Estate < ApplicationRecord
     belongs_to :type, optional: true
 
     scope :latest, -> { order created_at: :desc }
+    # enum type: [:venta, :arriendo]
 end
