@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_01_231050) do
+ActiveRecord::Schema.define(version: 2020_11_10_020934) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -46,6 +46,17 @@ ActiveRecord::Schema.define(version: 2020_11_01_231050) do
     t.integer "storage", default: 0
     t.text "description"
     t.index ["user_id"], name: "index_estates_on_user_id"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "name"
+    t.integer "code"
+    t.string "provincia"
+    t.string "region"
+    t.string "region_number"
+    t.string "region_iso_3166_2"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
