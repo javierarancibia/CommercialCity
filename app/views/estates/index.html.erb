@@ -7,6 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Address</th>
+      <th>Ciudad</th>
       <th>Price</th>
       <th>Rooms</th>
       <th>Bathrooms</th>
@@ -17,8 +18,9 @@
   <tbody>
     <% @estates.each do |estate| %>
       <tr>
-        <td><%= estate.name %></td>
+        <td><%#= estate.name %></td>
         <td><%= estate.address %></td>
+        <td><%= estate.location.name %></td>
         <td><%= estate.price %></td>
         <td><%= estate.rooms %></td>
         <td><%= estate.bathrooms %></td>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_10_025119) do
+ActiveRecord::Schema.define(version: 2020_11_10_141831) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -33,9 +33,14 @@ ActiveRecord::Schema.define(version: 2020_11_10_025119) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "estates", force: :cascade do |t|
     t.integer "user_id"
-    t.string "name"
     t.string "address"
     t.integer "price"
     t.integer "rooms"
@@ -46,7 +51,11 @@ ActiveRecord::Schema.define(version: 2020_11_10_025119) do
     t.integer "storage", default: 0
     t.text "description"
     t.integer "location_id"
+    t.integer "category_id"
+    t.integer "type_id"
+    t.index ["category_id"], name: "index_estates_on_category_id"
     t.index ["location_id"], name: "index_estates_on_location_id"
+    t.index ["type_id"], name: "index_estates_on_type_id"
     t.index ["user_id"], name: "index_estates_on_user_id"
   end
 
@@ -61,6 +70,12 @@ ActiveRecord::Schema.define(version: 2020_11_10_025119) do
     t.datetime "updated_at", null: false
     t.integer "estate_id"
     t.index ["estate_id"], name: "index_locations_on_estate_id"
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "mode"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

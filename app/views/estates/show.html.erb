@@ -3,7 +3,7 @@
 <div class="container pt-3 show-header">
   <section class="py-5">
     <span class="display-4"><%= @estate.address %></span>, <span class="display-4"><%= @estate.location.name %></span>
-    <p class="h5">Fecha de Publicacion: <%= @estate.created_at.strftime("%Y-%m-%d") %></p>
+    <p class="display-4"><%= @estate.location.region %></p><p class="h5">Fecha de Publicacion: <%= @estate.created_at.strftime("%Y-%m-%d") %></p>
   </section>
 </div>
         <div class="container text-center mb-3">
@@ -70,7 +70,7 @@
       <p class="h1"><%= @estate.price > 0 ? number_to_currency(@estate.price, precision: 0) : "En Venta" %></p>
       <div class="row border-top border-bottom mt-5 mb-4 pt-4 pb-4">
         <div class="col-6 text-left">
-            <strong class="text-info"><%= @estate.name %></strong>
+            <strong class="text-info"><%= @estate.type_id %></strong>
         </div>
            
         <div class="card w-65">
