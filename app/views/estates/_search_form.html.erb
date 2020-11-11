@@ -1,19 +1,20 @@
 <%= search_form_for @q do |f| %>
-  <%= f.label :Venta_o_arriendo %>
-  <%= f.collection_select :type_id_eq, Type.all, :id, :mode, include_blank: true %>
+    <%= f.label :Venta_o_arriendo %>
+    <%= f.collection_select :type_id_eq, Type.all, :id, :mode, include_blank: true %>
 
-  <%= f.label :Ciudad %>
-  <%= f.collection_select :location_id_eq, Location.all, :id, :name, include_blank: true %>
+    <%= f.label :Ciudad %>
+    <%= f.collection_select :location_id_eq, Location.all, :id, :name, include_blank: true %>
 
-  <%= f.label :Tipo_de_propiedad %>
-  <%= f.collection_select :category_id_eq, Category.all, :id, :name, include_blank: true %>
+    <%= f.label :Tipo_de_propiedad %>
+    <%= f.collection_select :category_id_eq, Category.all, :id, :name, include_blank: true %>
 
-  <div class="field">
-    <%= f.label :price_gteq, "Price between" %>
-    <%= f.text_field :price_gteq %>
-    <%= f.label :price_lteq, "and" %>
-    <%= f.text_field :price_lteq %>    
-  </div>
+    <div class="field">
+        <%= f.label :price_gteq, "Price between" %>
+        <%= f.text_field :price_gteq %>
+        <%= f.label :price_lteq, "and" %>
+        <%= f.text_field :price_lteq %>    
+    </div>
 
-  <%= f.submit "search" %>
+    <%= f.submit "search" %>
+    <%= link_to  "Todas las propiedades", estates_path %>
 <% end %>
