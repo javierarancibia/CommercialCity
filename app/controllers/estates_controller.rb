@@ -14,8 +14,12 @@ class EstatesController < ApplicationController
     # @categories = Category.all
   end
 
-  def dashboard
+  def favorite
     @likes = Like.where(user_id: current_user.id)
+  end
+
+  def dashboard
+    @estates = Estate.where(user_id: current_user.id)
   end
 
   # GET /estates/1

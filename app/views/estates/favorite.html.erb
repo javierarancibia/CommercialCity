@@ -1,0 +1,30 @@
+<table class="table table-striped"> 
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Categoria</th>
+      <th>Ubicacion</th>
+      <th>Ciudad</th>
+      <th>Precio</th>
+      <th>Dormitorios</th>
+      <th>Baños</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @likes.each do |like| %>
+      <tr>
+        <td><%= like.estate.category.name %></td>
+        <td><%= like.estate.type.mode %></td>
+        <td><%= like.estate.address %></td>
+        <td><%= like.estate.location.name %></td>
+        <td><%= like.estate.price %></td>
+        <td><%= like.estate.rooms %></td>
+        <td><%= like.estate.bathrooms %></td>
+        <td><%= image_tag like.estate.photos[0].variant(resize: '120x80') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+ 

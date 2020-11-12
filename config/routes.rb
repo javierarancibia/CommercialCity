@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'dashboard/estates'
   get 'dashboard/reports'
   get 'estates/dashboard', to: 'estates#dashboard', as: 'estate_dashboard'
+  get 'estates/favoritos', to: 'estates#favorite', as: 'estate_favorite'
   resources :estates do
     resources :likes
   end

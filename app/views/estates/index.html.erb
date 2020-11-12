@@ -29,14 +29,12 @@
         <td><%= estate.bathrooms %></td>
         <td><%= image_tag estate.photos[0].variant(resize: '120x80') %></td>
 
-  
         <td><%= link_to 'Mostrar', estate %></td>
-        <td><%= link_to 'Edita Tu Propiedad', edit_estate_path(estate) %></td>
-        <td><%= link_to 'Elimina la publicacion', estate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+  
 
 <br>
 
