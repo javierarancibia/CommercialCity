@@ -1,0 +1,24 @@
+<table class="table table-striped"> 
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Categoria</th>
+      <th>Ubicacion</th>
+      <th>Ciudad</th>
+      <th>Precio</th>
+      <th>Dormitorios</th>
+      <th>Baños</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @likes.each do |like| %>
+      <tr>
+        <td><%= like.estate.address %></td>
+        <td><%= like.estate.price %></td>
+ 
+      </tr>
+    <% end %>
+  </tbody>
+</table>

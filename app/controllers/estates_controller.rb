@@ -14,6 +14,10 @@ class EstatesController < ApplicationController
     # @categories = Category.all
   end
 
+  def dashboard
+    @likes = Like.where(user_id: current_user.id)
+  end
+
   # GET /estates/1
   # GET /estates/1.json
   def show
@@ -92,5 +96,5 @@ class EstatesController < ApplicationController
       params.require(:estate).permit(:name, :address, :price, :rooms, :bathrooms, :parking, :storage, :description, :location_id, :type_id, :category_id, photos: [])
     end
 
-    
 end
+   
