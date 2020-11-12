@@ -18,6 +18,7 @@ class EstatesController < ApplicationController
   # GET /estates/1.json
   def show
     @user = @estate.user
+    @pre_like = @estate.likes.find { |like| like.user_id == current_user.id}
   end
 
   # GET /estates/new

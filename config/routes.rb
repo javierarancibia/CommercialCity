@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   get 'dashboard/estates'
   get 'dashboard/reports'
 
-  resources :estates
+  resources :estates do
+    resources :likes
+  end
   devise_for :users, controllers: { 
     registrations: 'users/registrations',
     omniauth_callbacks: 'users/omniauth_callbacks',
