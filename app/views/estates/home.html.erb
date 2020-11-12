@@ -9,13 +9,24 @@
     </div>
   </div>
 
-  
+  <%= render 'search_form' %>
   <div class="container">
     <!-- Example row of columns -->
     <hr>
 
+<!-- Contador de tipos de propiedad con sus logos-->
+
+<% @categories.each do |cat| %>
+  <%= cat.name %>
+  <%= cat.estates.count %>
+<% end %>
+
+
+
+<!-- Muestra al azar de 6 propiedades publicadas. Cambian al hacer refresh a la pagina -->    
+<h2>Algunas propiedad publicadas</h2>
 <div class="row row-cols-1 row-cols-md-3">
-  <% @estates.each do |estate| %>
+  <% @estates_random.each do |estate| %>
       <div class="col-md-4">
         <div class="card h-100">
           <%= image_tag estate.photos[0], class: 'card-img-top', width: 300 if estate.photos.attached?%>
@@ -27,3 +38,4 @@
       </div>
   <% end %>
 </div>
+

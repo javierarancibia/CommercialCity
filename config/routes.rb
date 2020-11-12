@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  get "dashboard", to: 'dashboard#index', as: 'dashboard'
-  get 'dashboard/estates'
-  get 'dashboard/reports'
-  get 'estates/dashboard', to: 'estates#dashboard', as: 'estate_dashboard'
-  get 'estates/favoritos', to: 'estates#favorite', as: 'estate_favorite'
+  get 'dashboard', to: 'estates#dashboard', as: 'estate_dashboard'
+  get 'favoritos', to: 'estates#favorite', as: 'estate_favorite'
   resources :estates do
     resources :likes
   end
@@ -12,7 +9,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks',
     sessions: 'users/sessions'
   }
-  root to: 'public#index'
+  root to: 'estates#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end

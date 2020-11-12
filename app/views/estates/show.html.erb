@@ -96,8 +96,10 @@
 
         <div class="col-4">
             <%= render "estates/agent_details" %>
-            <%= link_to 'Edit', edit_estate_path(@estate) %> |
             <%= link_to 'Back', estates_path %>
+            <% if current_user.id == @estate.user_id %> |
+              <%= link_to 'Edit', edit_estate_path(@estate) %> 
+            <% end %>
         </div>
         </div>
     </div>

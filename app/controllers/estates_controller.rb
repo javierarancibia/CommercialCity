@@ -14,6 +14,13 @@ class EstatesController < ApplicationController
     # @categories = Category.all
   end
 
+  def home
+    @q = Estate.ransack(params[:q])
+    @estates = @q.result.includes(:location, :category, :type)
+    @estates_random = Estate.where(id: Estate.pluck(:id).sample(6))
+    @categories = Category.all
+  end
+
   def favorite
     @likes = Like.where(user_id: current_user.id)
   end
