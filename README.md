@@ -2,7 +2,7 @@
 
 ## Link a panel de planificación: https://trello.com/b/RzCxM8IZ/proyecto-final-desafio-latam
 
-## Link a Heroku: https://still-anchorage-72067.herokuapp.com/favoritos
+## Link a Heroku: https://still-anchorage-72067.herokuapp.com/
 
 ### Modelamiento de base de datos inicial
 
