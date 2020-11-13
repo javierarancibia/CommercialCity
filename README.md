@@ -2,6 +2,8 @@
 
 ## Link a panel de planificación: https://trello.com/b/RzCxM8IZ/proyecto-final-desafio-latam
 
+## Link a Heroku: https://still-anchorage-72067.herokuapp.com/favoritos
+
 ### Modelamiento de base de datos inicial
 
 Se realiza borrador de modelamiento inicial en base a entidad principal correspondiente a las propiedades (Estate), generando relaciones entre las distintas entidades externas. 
