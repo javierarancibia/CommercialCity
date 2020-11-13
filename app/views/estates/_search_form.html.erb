@@ -1,20 +1,26 @@
 <%= search_form_for @q do |f| %>
-    <%= f.label :Venta_o_arriendo %>
-    <%= f.collection_select :type_id_eq, Type.all, :id, :mode, include_blank: true %>
+    <%#= f.label :Venta_o_Arriendo %>
+    <%= f.collection_select :type_id_eq, Type.all, :id, :mode, {include_blank: true}, {class: "btn btn-light btn-lg dropdown-toggle mb-4 py-3"} %>
 
-    <%= f.label :Ciudad %>
-    <%= f.collection_select :location_id_eq, Location.all, :id, :name, include_blank: true %>
+    <%#= f.label :Tipo_de_propiedad %>
+    <%= f.collection_select :category_id_eq, Category.all, :id, :name, {include_blank: true}, {class: "btn btn-light btn-lg dropdown-toggle mb-4 py-3"} %>
 
-    <%= f.label :Tipo_de_propiedad %>
-    <%= f.collection_select :category_id_eq, Category.all, :id, :name, include_blank: true %>
+    <%#= f.label :Ciudad %>
+    <%= f.collection_select :location_id_eq, Location.all, :id, :name, {include_blank: true}, {class: "btn btn-light btn-lg dropdown-toggle mb-4 py-3"} %>
 
-    <div class="field">
-        <%= f.label :price_gteq, "Price between" %>
-        <%= f.text_field :price_gteq %>
-        <%= f.label :price_lteq, "and" %>
-        <%= f.text_field :price_lteq %>    
+<form>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <%#= f.label :price_gteq, "Price between" %>
+            <%= f.text_field :price_gteq, placeholder: "Ingresa valor minimo", class:"input-group input-group-lg py-3" %>
+        </div>
+        <div class="form-group col-md-6">
+            <%#= f.label :price_lteq, "and" %>
+            <%= f.text_field :price_lteq, placeholder: "Ingresa valor maximo", class:"input-group input-group-lg py-3" %>    
+        </div>
     </div>
+    
 
-    <%= f.submit "search" %>
+    <%= f.submit "Buscar", class:"btn btn-primary btn-lg px-5" %>
     <%= link_to  "Inicio", root_path %>
 <% end %>

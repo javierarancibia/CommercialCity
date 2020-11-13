@@ -75,7 +75,7 @@
             <%= @estate.likes.count %> <%= (@estate.likes.count) == 1 ? 'Usuario interesado en tu propiedad' : 'Usuarios interesados en tu propiedad'%>
           <% end %>
           
-          <% if @pre_like && %>
+          <% if @pre_like %>
             <%= button_to 'Ya no me interesa', estate_like_path(@estate, @pre_like), method: :delete %>
           <% else %>
             <%= button_to 'Me gusta', estate_likes_path(@estate), method: :post %>
