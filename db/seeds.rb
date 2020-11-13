@@ -2786,6 +2786,34 @@ Type.create(
     ]
 )
 
+Category.destroy_all 
+
+Category.create(
+    [
+        {
+            name: "Casa",
+        },
+        {
+            name: "Departamento"
+        },
+        {
+            name: "Terreno",
+        },
+        {
+            name: "Industria",
+        },
+        {
+            name: "Local Comercial",
+        },
+        {
+            name: "Parcela de Agrado",
+        },
+        {
+            name: "Agricola",
+        }
+    ]
+)
+
 
 
 
