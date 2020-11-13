@@ -2773,5 +2773,19 @@ Location.create(
 )
 
 
+Type.destroy_all 
+
+Type.create(
+    [
+        {
+            mode: "Venta",
+        },
+        {
+            mode: "Arriendo"
+        }
+    ]
+)
+
+
 
 
