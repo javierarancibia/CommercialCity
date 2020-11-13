@@ -1,4 +1,5 @@
 
+Estate.destroy_all
 Location.destroy_all 
 
 Location.create(
