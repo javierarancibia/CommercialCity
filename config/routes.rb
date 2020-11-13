@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get 'dashboard', to: 'estates#dashboard', as: 'estate_dashboard'
   get 'favoritos', to: 'estates#favorite', as: 'estate_favorite'
-  resources :type
-  resources :category
+  # resources :type
+  # resources :category
   resources :estates do
     resources :likes
   end
