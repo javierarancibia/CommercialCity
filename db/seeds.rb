@@ -2815,6 +2815,44 @@ Category.create(
     ]
 )
 
+Estate.create(
+    [
+        {
+            user_id: 1,
+        },
+        {
+            address: "Libertad 55"
+        },
+        {
+            price: 25000000,
+        },
+        {
+            rooms: 3,
+        },
+        {
+            bathrooms: 2,
+        },
+        {
+            parking: 2,
+        },
+        {
+            storage: 1,
+        },
+        {
+            description: "Propiedad muy bonita",
+        },
+        {
+            location_id: 10,
+        },
+        {
+            category_id: 2
+        },
+        {
+            type_id: 1,
+        },
+    ]
+)
+
 
 
 
