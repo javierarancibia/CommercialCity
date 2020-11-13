@@ -95,7 +95,7 @@
   </div>
 
         <div class="col-4">
-            <%= render "estates/agent_details" %>
+            <%#= render "estates/agent_details" %>
             <%= link_to 'Inicio', root_path %>
             <% if current_user.id == @estate.user_id %> |
               <%= link_to 'Edit', edit_estate_path(@estate) %> 
