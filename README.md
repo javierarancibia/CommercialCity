@@ -11,7 +11,7 @@ Se realiza borrador de modelamiento inicial en base a entidad principal correspo
 
 ### Modelamiento actualizado 
 
-Tras avance de tareas planificadas, se modifica el modelamiento inicial considerando nuevas funcionalidades en la aplicacion como posibilidad del usuario de guardar propiedades en un dashboard privado por medio de botones de interes, además de tener un panel de administracion personal de las propiedades de cada usuario. 
+Tras avance de tareas planificadas, se modifica el modelamiento inicial considerando nuevas funcionalidades en la aplicacion como posibilidad del usuario de guardar propiedades en un dashboard privado por medio de botones de interes, además de tener un panel de administracion personal de las propiedades de cada usuario. (modelado generado con gema ERD)
 
 ![modelamiento2](https://user-images.githubusercontent.com/69688629/99020320-0c07c280-253d-11eb-8097-fe0f1ab18d99.jpg)
 
