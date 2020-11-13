@@ -39,7 +39,7 @@
     <% @estates_random.each do |estate| %>
         <div class="col-md-4">
           <div class="card h-100">
-            <%= image_tag estate.photos[0], class: 'card-img-top', width: 300 if estate.photos.attached?%>
+            <%#= image_tag estate.photos[0], class: 'card-img-top', width: 300 if estate.photos.attached? %>
             <div class="card-body">
               <h2 class="card-title"> <%= estate.address %></h2>
               <p class="card-text">Size: <%= estate.rooms %><br>$<%= estate.price %></p><%= estate.rooms %>
