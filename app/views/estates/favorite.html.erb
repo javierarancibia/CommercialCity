@@ -49,7 +49,11 @@
         <td><%= like.estate.price %></td>
         <td><%= like.estate.rooms %></td>
         <td><%= like.estate.bathrooms %></td>
-        <td><%= image_tag like.estate.photos[0].variant(resize: '120x80') %></td>
+        <% if estate.photos.empty? %>
+          <td><%= image_tag("house.jpg", size: "120x80") %></td>
+        <% else %>
+          <td><%= image_tag estate.photos[0].variant(resize: '120x80') %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

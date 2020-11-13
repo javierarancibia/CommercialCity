@@ -55,7 +55,11 @@
             <td><%= estate.price %></td>
             <td><%= estate.rooms %></td>
             <td><%= estate.bathrooms %></td>
-            <td><%= image_tag estate.photos[0].variant(resize: '120x80') %></td>
+            <% if estate.photos.empty? %>
+              <td><%= image_tag("house.jpg", size: "120x80") %></td>
+            <% else %>
+              <td><%= image_tag estate.photos[0].variant(resize: '120x80') %></td>
+            <% end %>
 
             <td><%= link_to 'Mostrar', estate %></td>
           </tr>
