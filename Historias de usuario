@@ -1,0 +1,25 @@
+Historias de Usuario
+
+1.- El usuario Francisco entra a la app para buscar propiedades como visita. Le interesa solo buscar propiedades por lo que tiene libre acceso al registro de propiedades por medio de filtros de busqueda: por venta o arriendo, ubicacion, tipo de propiedad y rango de valores. Esto arroja un listado de propiedades con una foto en orden descendente por fecha de creacion.
+
+2.- Francisco al entrar a la propiedad, tiene tres recuadros informativos: bloque con antecedentes de la propiedad, carrusel de imagenes y mapa de ubicacion. Un cuarto opcional es una calculadora UF.  
+
+3.- Daniela es una corredora y quiere publicar un local de su cliente. Necesita registrarse por medio de facebook o por su correo para poder publicar la propiedad por medio de su perfil. 
+
+4.- Al entrar a publicacion de propiedad, Daniela debe llenar los siguientes campos: 
+
+
+5.- Cada usuario puede poner me gusta en cada propiedad para dos propositos: para que el propietario pueda medir la calidad de su post y para que el interesado acumule las propiedades que le gustan en su perfil (dashboard)
+
+6.- Cada usuario puede comentar en el show de la propiedad para interactuar con el usuario que publica y tener foro publico con todas las preguntas y respuesta (Q&A) orientados a la propiedad. 
+
+7.- La raiz de la pagina es el siguiente carrusel con fotos profesionales de propiedades (https://bbbootstrap.com/snippets/image-carousel-slider-description-47881477)
+
+8.- Bajo el filtro de buscadores se encuentran cartas informativas con articulos sobre propiedades, tipo blog, con modales. 
+
+9.- en pagina principal aparecen iconos con tipos de propiedades y contadores con la cantidad de propiedades publicadas. (como en portal australiano)
+
+API KEY google maps: AIzaSyCX9VNRtLubMN2d0Ku3DBqBB_42U9g5oDk
+
+
+

@@ -7,6 +7,7 @@
       <%= link_to  "Mis Propiedades Favoritas", estate_favorite_path, class: "mt-3 mx-5 text-white font-weight-bold" %>
       <%= link_to  "Cerrar Sesion", destroy_user_session_path, method: :delete, class: "mt-3 mx-3 text-white font-weight-bold" %>
       <%= link_to  "Edita tu perfil", edit_user_registration_path, class: "mt-3 mx-5 text-white font-weight-bold" %>
+      <%= link_to 'Publica una propiedad', new_estate_path, class: "mt-3 mx-5 text-white font-weight-bold" %>
       <span class="ml-5 text-white"><%= current_user.email %></span>
       <%= image_tag(current_user.avatar_thumbnail, size: '70x70', class: "rounded-circle mx-5") %>
   <% else %>
@@ -31,23 +32,28 @@
     <div class="row">
       <% @categories.each do |cat| %>
         <% if cat.name == "Casa" %>
-          <i class="fas fa-home fa-7x" aria-hidden="true"></i> 
+          <i class="fas fa-home fa-5x mx-auto mt-2" aria-hidden="true"></i> 
         <% elsif cat.name == "Departamento" %>
-          <i class="fas fa-building fa-7x" aria-hidden="true"></i> 
+          <i class="fas fa-building fa-5x mx-auto mt-2" aria-hidden="true"></i> 
         <% elsif cat.name == "Terreno" %>
-          <i class="far fa-square fa-7x" aria-hidden="true"></i> 
+          <i class="far fa-square fa-5x mx-auto mt-2" aria-hidden="true"></i> 
         <% elsif cat.name == "Industria" %>
-          <i class="fas fa-industry fa-7x" aria-hidden="true"></i>
+          <i class="fas fa-industry fa-5x mx-auto mt-2" aria-hidden="true"></i>
         <% elsif cat.name == "Local Comercial" %>
-          <i class="fas fa-store fa-7x" aria-hidden="true"></i>
+          <i class="fas fa-store fa-5x mx-auto mt-2" aria-hidden="true"></i>
         <% elsif cat.name == "Parcela de Agrado" %>
-          <i class="fas fa-tree fa-7x" aria-hidden="true"></i> 
+          <i class="fas fa-tree fa-5x mx-auto mt-2" aria-hidden="true"></i> 
         <% else %>
-          <i class="fas fa-tractor fa-7x" aria-hidden="true"></i> 
+          <i class="fas fa-tractor fa-5x mx-auto mt-2" aria-hidden="true"></i> 
         <% end %>
-        <%= cat.estates.count %>
       <% end %>
     </div>
+  </div>
+
+  <div class="row mb-2 mx-5 h2">
+    <% @categories.each do |cat| %>
+      <%= cat.estates.count %>
+    <% end %>
   </div>
 
   <!-- Muestra al azar de 6 propiedades publicadas. Cambian al hacer refresh a la pagina -->    
