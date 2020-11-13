@@ -12,7 +12,7 @@ class User < ApplicationRecord
     if avatar.attached?
       avatar.variant(resize: '150x150!').processed
     else 
-      image-url("default_profileB.jpg")
+      image_tag("default_profileB.jpg")
     end
   end
 
