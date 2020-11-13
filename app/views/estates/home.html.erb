@@ -50,9 +50,9 @@
     </div>
   </div>
 
-  <div class="row mb-2 mx-5 h2">
+  <div class="row mb-3 mx-5 h1 counter">
     <% @categories.each do |cat| %>
-      <%= cat.estates.count %>
+         <div class="col-md-1 mx-auto text-center"><%= cat.estates.count %></div>
     <% end %>
   </div>
 
