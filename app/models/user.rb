@@ -7,6 +7,14 @@ class User < ApplicationRecord
          
   has_one_attached :avatar
   has_many :estates
+  has_one :profile, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  after_create :init_profile
+
+
+  def init_profile
+    self.build_profile.save(validate: false)
+  end
 
   def avatar_thumbnail
     if avatar.attached?

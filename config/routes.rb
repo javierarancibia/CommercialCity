@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :profiles do
+    resources :comments
+  end
   get 'dashboard', to: 'estates#dashboard', as: 'estate_dashboard'
   get 'favoritos', to: 'estates#favorite', as: 'estate_favorite'
   # resources :type
