@@ -1,84 +1,115 @@
-<%= form_with(model: estate, local: true) do |form| %>
-  <% if estate.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(estate.errors.count, "error") %> prohibited this estate from being saved:</h2>
+<form>
+  <div class="form-row">
+    
+  <div class="container mt-5">    
+      <%= form_with(model: estate, local: true) do |form| %>
+        <% if estate.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(estate.errors.count, "error") %> prohibited this estate from being saved:</h2>
 
-      <ul>
-      <% estate.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+            <ul>
+            <% estate.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-row bg-secondary">
+          <div class="form-group col-md-4">
+            <div class="field">
+              <%#= form.label :Modo %>
+              <%= form.select :type_id, options_for_select(@types.map { |type| [type.mode, type.id] }), {include_blank: true}, {class: "btn btn-light btn-lg dropdown-toggle py-3 mt-3 ml-5"} %>
+            </div>
+          </div>
+
+          <div class="form-group col-md-4">
+            <div class="field">
+              <%#= form.label :Tipo_de_propiedad %>
+              <%= form.select :category_id, options_for_select(@categories.map { |cat| [cat.name, cat.id] }), {include_blank: true}, {class: "btn btn-light btn-lg dropdown-toggle mt-3 py-3"} %>
+            </div>
+          </div>
+
+          <div class="form-group col-md-4">
+            <div class="field">
+              <%#= form.label :region %>
+              <%= form.select :location_id, options_for_select(@locations.map { |location| [location.name, location.id] }),  {include_blank: true}, {class: "btn btn-light btn-lg dropdown-toggle mt-3 py-3 mr-5"} %>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <div class="form-group mt-3">
+              <%= form.label :Direccion %>
+              <%= form.text_field :address, class: "form-control", placeholder: "Ingresa la direccion de la propiedad" %>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group col-md-2">
+            <div class="form-group">
+              <%= form.label :precio %>
+              <%= form.number_field :price, class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group col-md-2.5">
+            <div class="form-group">
+              <%= form.label :Dormitorios %>
+              <%= form.number_field :rooms, class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group col-md-2.5">
+            <div class="form-group">
+              <%= form.label :Baños %>
+              <%= form.number_field :bathrooms, class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group col-md-2.5">
+            <div class="form-group">
+              <%= form.label :Estacionamientos %>
+              <%= form.number_field :parking, class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group col-md-2.5">
+            <div class="form-group">
+              <%= form.label :bodega %>
+              <%= form.number_field :storage, class: "form-control" %>
+            </div>
+          </div>  
+        </div>
+
+        <div class="form-group">
+          <%= form.label :descripcion %>
+          <%= form.text_area :description, class: "form-control", placeholder: "Describe la propiedad para mayor informacion" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :photo %>
+          <%= form.file_field :photos, multiple: true, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.submit "Guardar Propiedad", class: "btn btn-lg btn-primary btn-lg btn-block my-5" %>
+        </div>
+
+        <div class="my-4">
+          <% @estate.photos.each do |photo| %>
+            <%= image_tag(photo, size: '270x160') %>
+          <% end %>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :Modo %>
-    <%= form.select :type_id, options_for_select(@types.map { |type| [type.mode, type.id] }), prompt: 'Venta o Arriendo' %>
+      <%= link_to 'Volver', estates_path %>
   </div>
-
-  <div class="field">
-    <%= form.label :Tipo_de_propiedad %>
-    <%= form.select :category_id, options_for_select(@categories.map { |cat| [cat.name, cat.id] }), prompt: 'Tipo de propiedad' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :address %>
-    <%= form.text_field :address, class: "form-control" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :region %>
-    <%= form.select :location_id, options_for_select(@locations.map { |location| [location.name, location.id] }), prompt: 'Selecciona una ciudad' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :price %>
-    <%= form.number_field :price, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :rooms %>
-    <%= form.number_field :rooms, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :bathrooms %>
-    <%= form.number_field :bathrooms, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :Estacionamientos %>
-    <%= form.number_field :parking, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :bodega %>
-    <%= form.number_field :storage, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :descripcion %>
-    <%= form.text_area :description, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :photo %>
-    <%= form.file_field :photos, multiple: true, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.submit "Guardar Propiedad", class: "btn btn-lg btn-success" %>
-  </div>
-
-  <div class="mt-4">
-    <% @estate.photos.each do |photo| %>
-      <%= image_tag(photo, size: '480x260') %>
-    <% end %>
-  </div>
+</form>
 
 
 
 
 
 
-<% end %>
