@@ -52,9 +52,11 @@
 
   <p>
     <strong>Puntuacion de este usuario</strong>
-    <%= @profile.average(:rate) %>
+    <% @comments.each do |comment| %>
+        <%= comment.rate %>
+    <% end %>
   </p>
-
+  <%= @rate %>
   <% if current_user.id == @profile.user_id %>
     <%= link_to  "Edita tu Panel de Usuario", edit_profile_path %>
   <% end %>
@@ -84,3 +86,47 @@
       <%#= link_to  "Editar", model %>
   <% end %>
 </div>
+
+
+<% if @estates.empty? %>
+  <h2 class="text-center my-5"><%= "Este usuario no tiene propiedades publicadas" %></h2>
+  <i class="fas fa-times-circle fa-5x d-flex justify-content-center align-items-center"></i>
+<% else %>
+  <h2 class="text-center my-5"><%= "Estas son las propiedades publicadas por este usuario" %></h2>
+  <table class="table table-striped mt-5 container"> 
+    <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Categoria</th>
+        <th>Ubicacion</th>
+        <th>Ciudad</th>
+        <th>Precio</th>
+        <th>Dormitorios</th>
+        <th>Baños</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <% @estates.each do |estate| %>
+          <tr>
+            <td><%= estate.type.mode %></td>
+            <td><%= estate.category.name %></td>
+            <td><%= estate.address %></td>
+            <td><%= estate.location.name %></td>
+            <td><%= estate.price %></td>
+            <td><%= estate.rooms %></td>
+            <td><%= estate.bathrooms %></td>
+            <% if estate.photos.empty? %>
+              <td><%= image_tag("house.jpg", size: "120x80") %></td>
+            <% else %>
+              <td><%= image_tag estate.photos[0].variant(resize: '120x80') %></td>
+            <% end %>
+
+            <td><%= link_to 'Mostrar', estate %></td>
+          </tr>
+        <% end %>
+    </tbody>
+  </table>
+<% end %>
+  
