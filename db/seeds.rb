@@ -2795,7 +2795,7 @@ Category.create(
             name: "Casa",
         },
         {
-            name: "Departamento"
+            name: "Departamento",
         },
         {
             name: "Terreno",
