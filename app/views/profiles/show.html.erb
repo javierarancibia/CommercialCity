@@ -35,112 +35,188 @@
 
 
 <div class="container mt-5">
-  <p>
-    <strong>Usuario</strong>
-    <%= @profile.user.first_name %>
-  </p>
+    <div class="main-body">
+    
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                    <div class="mt-3">
+                      <%= @profile.user.first_name %> <%= @profile.user.last_name %>
+                      <p class="text-secondary mb-1"><%= @profile.job_position %></p>
+                      <p class="text-muted font-size-sm"><%= @profile.zone %></p>
+                      <button class="btn btn-primary">Sigueme</button>
+                      <button class="btn btn-outline-primary">Message</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mt-3">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe mr-2 icon-inline"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Website</h6>
+                    <span class="text-secondary"><%= @profile.url %></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter mr-2 icon-inline text-info"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>Twitter</h6>
+                    <span class="text-secondary"><%= @profile.twitter_profile %></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram mr-2 icon-inline text-danger"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>Instagram</h6>
+                    <span class="text-secondary"><%= @profile.instagram_profile %></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook mr-2 icon-inline text-primary"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>Facebook</h6>
+                    <span class="text-secondary"><%= @profile.facebook_profile %></span>
+                  </li>
+                </ul>
+                <div class="container mt-5">
+                  <% if current_user.id == @profile.user_id %>
+                    <%= link_to  "Edita tu Panel de Usuario", edit_profile_path %>
+                  <% end %>
+                  <%= link_to 'Volver a Inicio', root_path, class:"text-primary" %>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Nombre</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <%= @profile.user.first_name %>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <%= @profile.email %>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Numero de Contacto</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <%= @profile.phone %>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Numero Secundario</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <%= @profile.secondary_number %>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Address</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <%= @profile.address %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+        <div>
+        <h2 class="text-primary my-4">Este usuario tiene una puntuacion de: <%= @rate %> / 10</h2>
+        </div>
+        
+      <!-- Input de comentarios y calificaciones -->
 
-  <p>
-    <strong>Pagina Web</strong>
-    <%= @profile.url %>
-  </p>
+        <% if current_user.id != @profile.user_id %>
+            <h4 class="ml-2 mt-5 mb-3 ">Ingresa tu experiencia con este usuario</h4>
 
-  <p>
-    <strong>Telefono de Contacto</strong>
-    <%= @profile.phone %>
-  </p>
+                <%= form_with(model: [@profile, @profile.comments.build]) do |f| %>
+                  <div class="form-group col-md-12">
+                    <div class="form-row">
+                      <%= f.text_area :content, class: "form-control" , placeholder: "Escribe tu experiencia con este usuario" %>
+                    </div>
+                  </div> 
 
-  <p>
-    <strong>Correo de Contacto</strong>
-    <%= @profile.email %>
-  </p>
-
-  <p>
-    <strong>Direccion</strong>
-    <%= @profile.address %>
-  </p>
-
-  <p>
-    <strong>Puntuacion de este usuario</strong>
-    <% @comments.each do |comment| %>
-        <%= comment.rate %>
-    <% end %>
-  </p>
-  <%= @rate %>
-  <% if current_user.id == @profile.user_id %>
-    <%= link_to  "Edita tu Panel de Usuario", edit_profile_path %>
-  <% end %>
-  <%= link_to 'Volver a Inicio', root_path %>
-
-  <% if current_user.id != @profile.user_id %>
-      <h2>Comentarios</h2>
-      <%= form_with(model: [@profile, @profile.comments.build]) do |f| %>
-        <%= f.text_area :content, placeholder: "Escribe tu experiencia con este usuario" %>
-        <%= f.number_field :rate %>
-        <%= f.submit "Guardar", class: "btn btn-primary" %>
-      <% end %>
-  <% end %>
-
-  <hr>
-  <div class="my-5">
-  <% @comments.order(created_at: :desc).each do |comment| %>
-    <h5>
-      <strong><%= link_to comment.user.first_name, comment.user.profile %></strong > escribio <small><%= time_ago_in_words(comment.created_at) %></small>
-    </h5>
-
-    <h3>
-      <%= comment.content %>
-      <%= comment.rate %>
-    </h3>
-    <hr><hr>
-      <%#= link_to  "Editar", model %>
-  <% end %>
-</div>
-
-
-
-
-
-
-<% if @estates.empty? %>
-  <h2 class="text-center my-5"><%= "Este usuario no tiene propiedades publicadas" %></h2>
-  <i class="fas fa-times-circle fa-5x d-flex justify-content-center align-items-center"></i>
-<% else %>
-  <h2 class="text-center my-5"><%= "Estas son las propiedades publicadas por este usuario" %></h2>
-  <table class="table table-striped mt-5 container"> 
-    <thead>
-      <tr>
-        <th>Tipo</th>
-        <th>Categoria</th>
-        <th>Ubicacion</th>
-        <th>Ciudad</th>
-        <th>Precio</th>
-        <th>Dormitorios</th>
-        <th>Baños</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-        <% @estates.each do |estate| %>
-          <tr>
-            <td><%= estate.type.mode %></td>
-            <td><%= estate.category.name %></td>
-            <td><%= estate.address %></td>
-            <td><%= estate.location.name %></td>
-            <td><%= estate.price %></td>
-            <td><%= estate.rooms %></td>
-            <td><%= estate.bathrooms %></td>
-            <% if estate.photos.empty? %>
-              <td><%= image_tag("house.jpg", size: "120x80") %></td>
-            <% else %>
-              <td><%= image_tag estate.photos[0].variant(resize: '120x80') %></td>
+                  <div class="form-group col-md-12">
+                    <div class="form-row">
+                      <%= f.select :rate, options_for_select(0..10), { prompt: "Califica a este usuario" } %>
+                    </div>
+                  </div> 
+                      <%= f.submit "Guardar", class: "btn btn-primary ml-2" %>
+                <% end %>
             <% end %>
+        
 
-            <td><%= link_to 'Mostrar', estate %></td>
-          </tr>
-        <% end %>
-    </tbody>
-  </table>
-<% end %>
-  
+
+            <!-- Montaje de comentarios y calificaciones -->
+              <hr>
+              <h2 class="ml-2 mt-5">Comentarios</h2>
+              <div class="my-5 list-group list-group-flush">
+                <% @comments.order(created_at: :desc).each do |comment| %>
+                  <h5>
+                    <strong><%= link_to comment.user.first_name, comment.user.profile %></strong > escribio <small><%= time_ago_in_words(comment.created_at) %></small>
+                  </h5>
+
+                  <h3>
+                    <%= comment.content %>
+                    <small class="text-primary">Calificacion: 
+                    <%= comment.rate %>
+                    </small>
+                  </h3>
+                  <hr><hr>
+                    <%#= link_to  "Editar", model %>
+                <% end %>
+              </div>
+
+
+              <% if @estates.empty? %>
+                <h2 class="text-center my-5"><%= "Este usuario no tiene propiedades publicadas" %></h2>
+                <i class="fas fa-times-circle fa-5x d-flex justify-content-center align-items-center"></i>
+              <% else %>
+                <h2 class="text-center my-5"><%= "Estas son las propiedades publicadas por este usuario" %></h2>
+                <table class="table table-striped mt-5 container"> 
+                  <thead>
+                    <tr>
+                      <th>Tipo</th>
+                      <th>Categoria</th>
+                      <th>Ubicacion</th>
+                      <th>Ciudad</th>
+                      <th>Precio</th>
+                      <th colspan="3"></th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                      <% @estates.each do |estate| %>
+                        <tr>
+                          <td><%= estate.type.mode %></td>
+                          <td><%= estate.category.name %></td>
+                          <td><%= estate.address %></td>
+                          <td><%= estate.location.name %></td>
+                          <td><%= estate.price %></td>
+                          <% if estate.photos.empty? %>
+                            <td><%= image_tag("house.jpg", size: "120x80") %></td>
+                          <% else %>
+                            <td><%= image_tag estate.photos[0].variant(resize: '120x80') %></td>
+                          <% end %>
+
+                          <td><%= link_to 'Mostrar', estate %></td>
+                        </tr>
+                      <% end %>
+                  </tbody>
+                </table>
+              <% end %>
+          </div>
+        </div> 
+      </div>
+  </div> 
+</div>

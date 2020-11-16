@@ -32,10 +32,10 @@ gem 'mini_magick', '~> 4.8'
 gem 'ransack'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'cancancan'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-
+gem 'activeadmin'
 group :production do
   gem 'pg'
 end 

@@ -31,26 +31,50 @@
         <%= form.text_field :email, class: "form-control", placeholder: "Tu correo de contacto" %>
       </div>
 
-      <% if @locations != nil %>
-        <div class="form-group col-md-4">
-              <div class="field">
-                <%#= form.label :region %>
-                <%= form.select :location_id, options_for_select(@locations.map { |location| [location.name, location.id] }),  {include_blank: true}, {class: "btn btn-light btn-lg dropdown-toggle mt-3 py-3 mr-5"} %>
-              </div>
-        </div>
-      <% end %>
+      <div class="field">
+        <%= form.label :numero_secundario%>
+        <%= form.text_field :secondary_number, class: "form-control", placeholder: "Tu numero de contacto secundario" %>
+      </div>
 
-      <%
-=begin%>
- <div class="field">
-        <%= form.label :user_id %>
-        <%= form.text_field :user_id %>
-      </div> 
-<%
-=end%>
+      <div class="field">
+        <%= form.label :cuenta_de_facebook%>
+        <%= form.text_field :facebook_profile, class: "form-control", placeholder: "Tu cuenta de Facebook" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :cuenta_de_twitter %>
+        <%= form.text_field :twitter_profile, class: "form-control", placeholder: "Tu cuenta de Twitter" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :cuenta_de_instagram %>
+        <%= form.text_field :instagram_profile, class: "form-control", placeholder: "Tu cuenta de Instagram" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :posicion_laboral %>
+        <%= form.text_field :job_position, class: "form-control", placeholder: "Tu cuenta de Instagram" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :zona_de_trabajo %>
+        <%= form.text_field :zone, class: "form-control", placeholder: "Tu cuenta de Instagram" %>
+      </div>
+
+      
 
       <div class="actions">
-        <%= form.submit %>
+        <%= form.submit "Guarda los cambios", class: "btn btn-lg btn-primary btn-lg btn-block my-5" %>
       </div>
   </div>
 <% end %>
+
+
+
+
+
+
+
+
+
+

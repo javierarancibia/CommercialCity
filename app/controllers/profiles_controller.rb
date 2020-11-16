@@ -11,7 +11,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1.json
   def show
     @comments = Comment.where("profile_id = ?", params[:id])
-    @rate = Comment.average(:rate)
+    @rate = @profile.comments.average(:rate)
     @estates = Estate.where(user_id: @profile.user_id)
   end
 
@@ -75,6 +75,6 @@ class ProfilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def profile_params
-      params.require(:profile).permit(:url, :phone, :user_id, :email, :address, :location_id)
+      params.require(:profile).permit(:url, :phone, :user_id, :email, :address, :location_id, :secondary_number, :facebook_profile, :twitter_profile, :instagram_profile, :job_position, :zone)
     end
 end

@@ -17,6 +17,8 @@
         <%= f.file_field :avatar %>
       </div>
 
+      <%= f.hidden_field(:role, :value => ["regular"]) %>
+
       <%= f.text_field :first_name, autofocus: true, class: "form-control", placeholder: "Tu Nombre" %>
 
       <%= f.text_field :last_name, class: "form-control", placeholder: "Tu Apellido" %>

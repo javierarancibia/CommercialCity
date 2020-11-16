@@ -2,6 +2,7 @@ class EstatesController < ApplicationController
   before_action :set_estate, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :destroy]
   before_action :set_sidebar, except: [:show]
+  # load_and_authorize_resource
 
   # GET /estates
   # GET /estates.json
