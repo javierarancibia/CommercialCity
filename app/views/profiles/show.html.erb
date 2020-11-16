@@ -51,6 +51,16 @@
   </p>
 
   <p>
+    <strong>Correo de Contacto</strong>
+    <%= @profile.email %>
+  </p>
+
+  <p>
+    <strong>Direccion</strong>
+    <%= @profile.address %>
+  </p>
+
+  <p>
     <strong>Puntuacion de este usuario</strong>
     <% @comments.each do |comment| %>
         <%= comment.rate %>
@@ -86,6 +96,10 @@
       <%#= link_to  "Editar", model %>
   <% end %>
 </div>
+
+
+
+
 
 
 <% if @estates.empty? %>

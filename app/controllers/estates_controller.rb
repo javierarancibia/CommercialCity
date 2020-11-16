@@ -23,10 +23,16 @@ class EstatesController < ApplicationController
 
   def favorite
     @likes = Like.where(user_id: current_user.id)
+    @types = Type.all
+    @categories = Category.all
+    @locations = Location.all
   end
 
   def dashboard
     @estates = Estate.where(user_id: current_user.id)
+    @types = Type.all
+    @categories = Category.all
+    @locations = Location.all
   end
 
   # GET /estates/1
@@ -56,6 +62,9 @@ class EstatesController < ApplicationController
   def create
     @estate = Estate.new(estate_params)
     @estate.user_id = current_user.id
+    @types = Type.all
+    @categories = Category.all
+    @locations = Location.all
 
     respond_to do |format|
       if @estate.save

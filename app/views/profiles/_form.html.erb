@@ -18,8 +18,27 @@
 
       <div class="field">
         <%= form.label :Numero_de_contacto %>
-        <%= form.number_field :phone, class: "form-control", placeholder: "Tu pagina" %>
+        <%= form.number_field :phone, class: "form-control", placeholder: "Tu numero de contacto" %>
       </div>
+
+      <div class="field">
+        <%= form.label :direccion %>
+        <%= form.text_field :address, class: "form-control", placeholder: "Tu direccion" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :correo_de_contacto%>
+        <%= form.text_field :email, class: "form-control", placeholder: "Tu correo de contacto" %>
+      </div>
+
+      <% if @locations != nil %>
+        <div class="form-group col-md-4">
+              <div class="field">
+                <%#= form.label :region %>
+                <%= form.select :location_id, options_for_select(@locations.map { |location| [location.name, location.id] }),  {include_blank: true}, {class: "btn btn-light btn-lg dropdown-toggle mt-3 py-3 mr-5"} %>
+              </div>
+        </div>
+      <% end %>
 
       <%
 =begin%>
