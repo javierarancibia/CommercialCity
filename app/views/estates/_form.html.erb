@@ -18,21 +18,21 @@
           <div class="form-group col-md-4">
             <div class="field">
               <%#= form.label :Modo %>
-              <%= form.select :type_id, options_for_select(@types.map { |type| [type.mode, type.id] }), {include_blank: true}, {class: "btn btn-light btn-lg dropdown-toggle py-3 mt-3 ml-5"} %>
+                <%= form.select :type_id, options_for_select(@types.map { |type| [type.mode, type.id] }), {include_blank: false}, {class: "btn btn-light btn-lg dropdown-toggle py-3 mt-3 ml-5"} %>
             </div>
           </div>
 
           <div class="form-group col-md-4">
             <div class="field">
               <%#= form.label :Tipo_de_propiedad %>
-              <%= form.select :category_id, options_for_select(@categories.map { |cat| [cat.name, cat.id] }), {include_blank: true}, {class: "btn btn-light btn-lg dropdown-toggle mt-3 py-3"} %>
+              <%= form.select :category_id, options_for_select(@categories.map { |cat| [cat.name, cat.id] }), {include_blank: false}, {class: "btn btn-light btn-lg dropdown-toggle mt-3 py-3"} %>
             </div>
           </div>
 
           <div class="form-group col-md-4">
             <div class="field">
               <%#= form.label :region %>
-              <%= form.select :location_id, options_for_select(@locations.map { |location| [location.name, location.id] }),  {include_blank: true}, {class: "btn btn-light btn-lg dropdown-toggle mt-3 py-3 mr-5"} %>
+              <%= form.select :location_id, options_for_select(@locations.map { |location| [location.name, location.id] }),  {include_blank: false}, {class: "btn btn-light btn-lg dropdown-toggle mt-3 py-3 mr-5"} %>
             </div>
           </div>
         </div>
@@ -100,6 +100,7 @@
         <div class="my-4">
           <% @estate.photos.each do |photo| %>
             <%= image_tag(photo, size: '270x160') %>
+            <%= link_to  "Borrar", delete_photo_path(photo.id), method: :delete %>
           <% end %>
         </div>
       <% end %>
