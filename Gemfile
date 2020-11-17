@@ -31,6 +31,7 @@ gem 'omniauth-facebook'
 gem 'mini_magick', '~> 4.8'
 gem 'ransack'
 gem 'aws-sdk-s3'
+gem 'chartkick'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'cancancan'
