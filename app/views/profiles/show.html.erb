@@ -42,7 +42,13 @@
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
+
+                  <% if current_user.avatar.attached? %>
+                    <%= image_tag current_user.avatar, size: '150x150', class: "rounded-circle mx-5" %>
+                  <% else %>
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                  <% end %>
+
                     <div class="mt-3">
                       <%= @profile.user.first_name %> <%= @profile.user.last_name %>
                       <p class="text-secondary mb-1"><%= @profile.job_position %></p>

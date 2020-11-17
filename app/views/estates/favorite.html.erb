@@ -11,11 +11,12 @@
       <%= link_to 'Inicio', root_path, class: "mt-3 mx-5 text-white font-weight-bold" %>
       <span class="ml-5 text-white"><%= current_user.email %></span>
 
-      <% if current_user.avatar.nil? %>
-        <% image_tag("avatar2.jpg") %>
-      <% else %>
-      <%#= image_tag(current_user.avatar, size: '70x70', class: "rounded-circle mx-5") %>
-      <% end %>
+        <% if current_user.avatar.attached? %>
+          <%= image_tag current_user.avatar, size: '70x70', class: "rounded-circle mx-5" %>
+        <% else %>
+          <%= image_tag("default_profileB.jpg", size: '70x70', class: "rounded-circle mx-5") %>
+        <% end %>
+        
   <% else %>
       <%= link_to  "Inicia Sesion", new_user_session_path, class: "mt-3 ml-3 text-white font-weight-bold" %>
       <%= link_to  "Registrate", new_user_registration_path, class: "mt-3 ml-3 text-white font-weight-bold" %>
