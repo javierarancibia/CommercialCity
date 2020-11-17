@@ -50,12 +50,23 @@
     <% @estates_random.each do |estate| %>
         <div class="col-md-4 text-center">
           <div class="card h-100">
-            <%= estate.photos.first.nil? ? image_tag("house.jpg", width: "345") : image_tag(estate.photos.first, width: "345") %>
+            <%= estate.photos.first.nil? ? image_tag("house.jpg", size: "345x250") : image_tag(estate.photos.first, size: "345x250") %>
             <div class="card-body">
-              <h4 class="card-title"> <%= estate.location.name %></h4>
+              <h4 class="card-title"><%= estate.category.name %> en <%= estate.type.mode %></h4>
+              <h5 class="text-secondary"><%= estate.location.name %>, Region <%= estate.location.region_number %></h5>
               <p class="card-text"><%= estate.description %><br><h5><%= number_to_currency(estate.price, precision: 0) %></h5></p>
-              <strong class="text-secondary h5"><%= estate.rooms %></strong> <i class="fas fa-bed fa-2x mx-auto mt-2 align-bottom text-secondary"></i>
-              <strong class="text-secondary h5"><%= estate.bathrooms %></strong> <i class="fas fa-toilet fa-2x mx-auto mt-2 align-bottom text-secondary"></i>
+                <% if estate.rooms != nil %>
+                  <strong class="text-secondary h5"><%= estate.rooms %></strong> <i class="fas fa-bed fa-2x mx-auto mt-2 align-bottom text-secondary"></i>
+                <% end %>
+                <% if estate.bathrooms != nil %>
+                  <strong class="text-secondary h5"><%= estate.bathrooms %></strong> <i class="fas fa-toilet fa-2x mx-auto mt-2 align-bottom text-secondary"></i>
+                <% end %>
+                <% if estate.parking != nil %>
+                  <strong class="text-secondary h5"><%= estate.parking %></strong> <i class="fas fa-car fa-2x mx-auto mt-2 align-bottom text-secondary"></i>
+                <% end %>
+                <% if estate.storage != nil %>
+                  <strong class="text-secondary h5"><%= estate.storage %></strong> <i class="fas fa-box-open fa-2x mx-auto mt-2 align-bottom text-secondary"></i>
+                <% end %>
             </div>
           </div>
         </div>

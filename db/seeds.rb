@@ -2834,11 +2834,6 @@ Estate.create(
         
             description: "Propiedad muy bonita",
        
-            location_id: 10,
-
-            category_id: 2,
-       
-            type_id: 1
         }
     ]
 )

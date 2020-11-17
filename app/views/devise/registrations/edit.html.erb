@@ -7,9 +7,9 @@
 
     <div class="field">
       <% if resource.avatar.attached? %>
-        <%= image_tag resource.avatar, class: "rounded-circle" %>
+        <%= image_tag resource.avatar, size: '120x120', class: "rounded-circle mx-5 mb-4" %>
       <% else %>
-        <%= image_tag ("/assets/images/default_profileB.jpg")%>
+        <%= image_tag("default_profileB.jpg", size: '120x120', class: "rounded-circle mx-5 mb-4") %>
       <% end %>
     </div>
 
