@@ -184,7 +184,7 @@
               </div>
 
 
-              <% column_chart @estates_published %>
+              <%= column_chart @estates_published, colors: ["#607D8B", "#3F51B5"] %>
 
               <% if @estates.empty? %>
                 <h2 class="text-center my-5"><%= "Este usuario no tiene propiedades publicadas" %></h2>

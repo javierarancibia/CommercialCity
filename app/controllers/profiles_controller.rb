@@ -13,7 +13,7 @@ class ProfilesController < ApplicationController
     @comments = Comment.where("profile_id = ?", params[:id])
     @rate = @profile.comments.average(:rate)
     @estates = Estate.where(user_id: @profile.user_id)
-    @estates_published = Estate.group(:category).where(user_id: @profile.user_id)
+    @estates_published = Estate.joins(:category).group('categories.name').where(user_id: @profile.user_id).count()
   end
 
   # GET /profiles/new
