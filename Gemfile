@@ -30,6 +30,7 @@ gem 'omniauth-facebook'
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
 gem 'ransack'
+gem 'aws-sdk-s3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'cancancan'
