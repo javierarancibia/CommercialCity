@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :estates
   has_one :profile, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :visits
   after_create :init_profile
   enum role: { guest: 0, regular: 1, admin: 2 }
 

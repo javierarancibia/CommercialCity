@@ -134,7 +134,7 @@
     </div>
 
 <div class="container my-5">
-  <iframe width="1100" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCX9VNRtLubMN2d0Ku3DBqBB_42U9g5oDk&q=<%= @estate.address.to_param %>, <%= @estate.location.name.to_param %>" allowfullscreen></iframe>
+  <iframe width="1100" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCX9VNRtLubMN2d0Ku3DBqBB_42U9g5oDk&q=<%= @estate.address %>, <%= @estate.location.name %>" allowfullscreen></iframe>
 </div>
 
 
@@ -142,6 +142,40 @@
 <div class="container mt-5">
   <%#= image_tag @estate.photos.first.variant(resize: '900x1500') if @estate.photos.attached? %>
 </div>
+
+
+
+<div class="container">
+
+  <%= form_with(model: [ @estate, @visit ]) do |f| %>
+      <div>
+          <%= f.text_field :content, placeholder: 'Informacion' %>
+      </div>
+
+      <div>
+          <%= f.label :start, "Inicio" %>
+          <%= f.datetime_field :start %>
+      </div>
+
+      <div>
+          <%= f.label :end, "Termino" %>
+          <%= f.datetime_field :end %>
+      </div>
+
+      <div>
+        <%= f.submit %>
+      </div>
+
+  <% end %>
+</div>
+
+
+<div class="container" id="calendar"></div>
+
+
+
+
+
 
 
 

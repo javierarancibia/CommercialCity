@@ -10,9 +10,13 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require moment/dist/moment
+//= require fullcalendar/main
 //= require chartkick
 //= require highcharts
+//= require bootstrap/dist/js/bootstrap
 //= require_tree .

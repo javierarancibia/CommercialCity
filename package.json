@@ -3,7 +3,12 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "5.2.1",
-    "highcharts": "^8.2.2"
+    "bootstrap": "^4.5.3",
+    "fullcalendar": "^5.4.0",
+    "highcharts": "^8.2.2",
+    "jquery": "^3.5.1",
+    "moment": "^2.29.1",
+    "popper": "^1.0.1"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.11.0"

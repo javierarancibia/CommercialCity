@@ -41,6 +41,7 @@ class EstatesController < ApplicationController
   def show
     @user = @estate.user
     @pre_like = @estate.likes.find { |like| like.user_id == current_user.id}
+    @visit = Visit.new
   end
 
   # GET /estates/new
@@ -126,6 +127,10 @@ class EstatesController < ApplicationController
     def estate_params
       params.require(:estate).permit(:name, :address, :price, :rooms, :bathrooms, :parking, :storage, :description, :location_id, :type_id, :category_id, photos: [])
     end
+
+    def visit_params
+      params.require(:visit).permit(:content, :start, :end, :estate_id, :visit_id, :user_id)
+  end
 
 end
    

@@ -1,12 +1,12 @@
 <%= search_form_for @q do |f| %>
     <%#= f.label :Venta_o_Arriendo %>
-    <%= f.collection_select :type_id_eq, Type.all, :id, :mode, {include_blank: true}, {class: "btn btn-light btn-lg dropdown-toggle mb-4 py-3"} %>
+    <%= f.collection_select :type_id_eq, Type.all, :id, :mode, {include_blank: false}, {class: "btn btn-light btn-lg dropdown-toggle mb-4 py-3"} %>
 
     <%#= f.label :Tipo_de_propiedad %>
-    <%= f.collection_select :category_id_eq, Category.all, :id, :name, {include_blank: true}, {class: "btn btn-light btn-lg dropdown-toggle mb-4 py-3"} %>
+    <%= f.collection_select :category_id_eq, Category.all, :id, :name, {include_blank: false}, {class: "btn btn-light btn-lg dropdown-toggle mb-4 py-3"} %>
 
     <%#= f.label :Ciudad %>
-    <%= f.collection_select :location_id_eq, Location.all, :id, :name, {include_blank: true}, {class: "btn btn-light btn-lg dropdown-toggle mb-4 py-3"} %>
+    <%= f.collection_select :location_id_eq, Location.all, :id, :name, {include_blank: false}, {class: "btn btn-light btn-lg dropdown-toggle mb-4 py-3"} %>
 
 <form>
     <div class="form-row">

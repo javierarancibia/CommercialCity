@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   # resources :category
   resources :estates do
     resources :likes
+    resources :visits
   end
+  post 'visits', to: 'visits#create', as: 'create_visit'
   devise_for :users, controllers: { 
     registrations: 'users/registrations',
     omniauth_callbacks: 'users/omniauth_callbacks',
