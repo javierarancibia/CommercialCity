@@ -14,8 +14,10 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require moment/dist/moment
+//= require moment/moment
+//= require moment/locale/es
 //= require fullcalendar/main
+//= require fullcalendar/locales/es
 //= require chartkick
 //= require highcharts
 //= require bootstrap/dist/js/bootstrap

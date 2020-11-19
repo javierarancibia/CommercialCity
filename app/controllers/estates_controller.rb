@@ -42,6 +42,13 @@ class EstatesController < ApplicationController
     @user = @estate.user
     @pre_like = @estate.likes.find { |like| like.user_id == current_user.id}
     @visit = Visit.new
+    
+    @visit_estate = Visit.where(estate_id: @estate.id)
+
+    respond_to do |format|
+      format.html {  }
+      format.json { render json: @visit_estate }
+    end
   end
 
   # GET /estates/new

@@ -4,8 +4,8 @@ class VisitsController < ApplicationController
     def create
         @visit = Visit.new(visit_params)
         @visit.estate_id = params[:estate_id]
-        @visit.save!
-        debugger
+        @visit.user_id = current_user.id 
+        @visit.save
         redirect_to @estate 
     end
        

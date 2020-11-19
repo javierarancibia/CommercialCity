@@ -147,7 +147,7 @@
 
 <div class="container">
 
-  <%= form_with(model: [ @estate, @visit ]) do |f| %>
+  <%= form_with(model: [ @estate, @visit ], local: true) do |f| %>
       <div>
           <%= f.text_field :content, placeholder: 'Informacion' %>
       </div>
@@ -171,6 +171,9 @@
 
 
 <div class="container" id="calendar"></div>
+
+<script>var estateId = <%= @estate.id %></script>
+
 
 
 
