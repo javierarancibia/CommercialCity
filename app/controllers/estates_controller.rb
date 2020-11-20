@@ -126,7 +126,7 @@ class EstatesController < ApplicationController
     @att = ActiveStorage::Attachment.find_by(blob_id: params[:id])
     @estate = @att.record
     @att.purge
-    redirect_to @estate
+    redirect_to root_path
   end
 
   private
