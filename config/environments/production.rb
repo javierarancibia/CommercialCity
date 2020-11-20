@@ -67,7 +67,7 @@ Rails.application.configure do
 
   config.action_mailer.mailgun_settings = {
     api_key: ENV['MAILGUN_API_KEY'],
-    domain: 'sandbox51940018fa6c47aca0562e6c0132a0f6.mailgun.org'
+    domain: 'https://still-anchorage-72067.herokuapp.com/'
 
   }
 
