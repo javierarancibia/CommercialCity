@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'estates#dashboard', as: 'estate_dashboard'
   get 'favoritos', to: 'estates#favorite', as: 'estate_favorite'
   delete 'propiedad/foto/:id', to: 'estates#delete_photo', as: 'delete_photo'
+  post 'estates/:estate_id/visits/:id', to: 'visits#update', as: 'update_visit'
   # resources :type
   # resources :category
   resources :estates do

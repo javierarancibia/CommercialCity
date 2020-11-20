@@ -10,9 +10,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+
+    info_mail(
+      mail: resource.email, 
+      subject: 'Bienvenido a CommercialCity, la ciudad digital',
+      message: 'Tu cuenta ha sido creada con exito'
+    )
+  end
 
   # GET /resource/edit
   # def edit

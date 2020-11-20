@@ -143,9 +143,10 @@
   <%#= image_tag @estate.photos.first.variant(resize: '900x1500') if @estate.photos.attached? %>
 </div>
 
+  <!-- Calendario con formulario para disponibilidad de visitas a la propiedad-->
 
-
-<div class="container">
+<div class="container my-5" id="calendar"></div>
+<div class="container my-5">
 
   <%= form_with(model: [ @estate, @visit ], local: true) do |f| %>
       <div>
@@ -163,17 +164,38 @@
       </div>
 
       <div>
-        <%= f.submit %>
+        <%= f.submit "Crear fecha" %>
       </div>
 
   <% end %>
 </div>
 
 
-<div class="container" id="calendar"></div>
+<table class="table table-striped container my-3"> 
+  <thead>
+    <tr>
+      <th>Contenido</th>
+      <th>Desde</th>
+      <th>Hasta</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @visit_estate.each do |visit| %>
+      <tr>
+        <td><%= visit.content %></td>
+        <td><%= visit.start %></td>
+        <td><%= visit.end %></td>
+  
+        <td><%= link_to 'Edita la fecha', edit_estate_visit_path(visit) %></td>
+        <td><%#= link_to 'Elimina la fecha', visit, method: :delete, data: { confirm: '¿Estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <script>var estateId = <%= @estate.id %></script>
-
 
 
 

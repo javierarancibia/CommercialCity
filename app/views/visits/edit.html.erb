@@ -1,0 +1,24 @@
+ <h1>Edita la fecha de disponibilidad para los interesados en tu propiedad</h1>
+ 
+ <%= form_with(model: @visit, url: update_visit_path, method: :post, local: true) do |f| %>
+      <div>
+          <%= f.text_field :content, placeholder: 'Informacion' %>
+      </div>
+
+      <div>
+          <%= f.label :start, "Inicio" %>
+          <%= f.datetime_field :start %>
+      </div>
+
+      <div>
+          <%= f.label :end, "Termino" %>
+          <%= f.datetime_field :end %>
+      </div>
+
+      <div>
+        <%= f.submit "Crear fecha" %>
+      </div>
+
+  <% end %>
+</div>
+

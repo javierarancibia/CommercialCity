@@ -100,11 +100,13 @@
         <div class="my-4">
           <% @estate.photos.each do |photo| %>
             <%= image_tag(photo, size: '270x160') %>
-            <%= link_to  "Borrar", delete_photo_path(photo.id), method: :delete %>
+            <% if photo.id != nil %>
+              <%= link_to  "Borrar", delete_photo_path(photo.id), method: :delete %>
+            <% end %>
           <% end %>
         </div>
       <% end %>
-      <%= link_to 'Volver', estates_path %>
+      <%= link_to 'Volver', root_path %>
   </div>
 
 

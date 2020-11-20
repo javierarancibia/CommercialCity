@@ -32,6 +32,7 @@ gem 'mini_magick', '~> 4.8'
 gem 'ransack'
 gem 'aws-sdk-s3'
 gem 'chartkick'
+gem 'mailgun-ruby'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'cancancan'
@@ -39,6 +40,7 @@ gem 'webpacker', '~> 5.x'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'activeadmin'
+gem 'active_storage_validations'
 group :production do
   gem 'pg'
 end 

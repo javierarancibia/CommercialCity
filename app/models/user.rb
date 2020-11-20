@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :omniauthable, :omniauth_providers => [:facebook]
          
   has_one_attached :avatar
+  validates :avatar, content_type: [:png, :jpg, :jpeg]
   has_many :estates
   has_one :profile, dependent: :destroy
   has_many :comments, dependent: :destroy

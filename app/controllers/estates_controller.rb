@@ -79,6 +79,12 @@ class EstatesController < ApplicationController
       if @estate.save
         format.html { redirect_to @estate, notice: 'Estate was successfully created.' }
         format.json { render :show, status: :created, location: @estate }
+
+        estate_mail(
+          mail: current_user.email, 
+          subject: 'Tu propiedad se ha publicado con exito!',
+          message: 'Tu propiedad ha sido creada con exito!'
+        )
       else
         format.html { render :new }
         format.json { render json: @estate.errors, status: :unprocessable_entity }
@@ -89,6 +95,9 @@ class EstatesController < ApplicationController
   # PATCH/PUT /estates/1
   # PATCH/PUT /estates/1.json
   def update
+    @types = Type.all
+    @categories = Category.all
+    @locations = Location.all
     respond_to do |format|
       if @estate.update(estate_params)
         format.html { redirect_to @estate, notice: 'Estate was successfully updated.' }
