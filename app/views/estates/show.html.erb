@@ -8,7 +8,7 @@
         <div class="container text-center mb-3">
           <div class="row bg-light">
             <div class="col-3">
-              <p class="m-0 h5"><strong>Habitaciones</strong></p>
+              <p class="m-0 h4"><strong>Habitaciones</strong></p>
                   <span class="lead h4"><%= @estate.rooms %></span>
             </div>
             <div class="col-3">
@@ -144,40 +144,49 @@
 </div>
 
   <!-- Calendario con formulario para disponibilidad de visitas a la propiedad-->
-
+<h2 class="text-center my-5">Fechas de visita disponibles para mayor informacion</h2>
 <div class="container my-5" id="calendar"></div>
 <div class="container my-5">
 
+<% if current_user.id == @estate.user_id %>
+  <h3 class="text-center my-5">Agrega fechas de visita disponibles para mayor informacion</h3>
   <%= form_with(model: [ @estate, @visit ], local: true) do |f| %>
-      <div>
-          <%= f.label :content, "Contenido" %>
-          <%= f.text_field :content %>
+    <div class="form-row text-center h4">
+      <div class="form-group col-md-4">
+        <div>
+            <%= f.label :content, "Observaciones" %>
+            <%= f.text_field :content, class:"form-control" %>
+        </div>
+      </div>
+      <div class="form-group col-md-4">
+        <div>
+            <%= f.label :start, "Inicio" %>
+            <%= f.datetime_field :start, class:"form-control" %>
+        </div>
+      </div>
+      <div class="form-group col-md-4">
+        <div>
+            <%= f.label :end, "Termino" %>
+            <%= f.datetime_field :end, class:"form-control" %>
+        </div>
       </div>
 
-      <div>
-          <%= f.label :start, "Inicio" %>
-          <%= f.datetime_field :start %>
-      </div>
-
-      <div>
-          <%= f.label :end, "Termino" %>
-          <%= f.datetime_field :end %>
-      </div>
-
-      <div>
-        <%= f.submit "Crear fecha" %>
-      </div>
+        
+          <%= f.submit "Crear fecha", class:"btn btn-primary btn-lg text-center" %>
+        
+    </div>
 
   <% end %>
+<% end %>
 </div>
 
 
-<table class="table table-striped container my-3"> 
+<table class="table table-striped container my-5"> 
   <thead>
     <tr>
-      <th>Contenido</th>
-      <th>Desde</th>
-      <th>Hasta</th>
+      <th class="text-center h4">Observaciones</th>
+      <th class="text-center h4">Desde</th>
+      <th class="text-center h4">Hasta</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -185,12 +194,14 @@
   <tbody>
     <% @visit_estate.each do |visit| %>
       <tr>
-        <td><%= visit.content %></td>
-        <td><%= visit.start %></td>
-        <td><%= visit.end %></td>
-  
-        <td><%= link_to 'Edita la fecha', edit_estate_visit_path(@estate, visit) %></td>
-        <td><%#= link_to 'Elimina la fecha', visit, method: :delete, data: { confirm: '¿Estas seguro?' } %></td>
+        <td class="text-center"><%= visit.content %></td>
+        <td class="text-center"><%= visit.start.strftime("%m/%d/%Y a las %H:%M") %></td>
+        <td class="text-center"><%= visit.end.strftime("%m/%d/%Y a las %H:%M") %></td>
+
+        <% if current_user.id == @estate.user_id %>
+          <td><%= link_to 'Edita la fecha', edit_estate_visit_path(@estate, visit), :class => 'btn btn-large btn-primary text-white' %></td>
+          <td><%= link_to 'Borra la fecha', estate_visit_path(@estate, visit), :method => 'delete', :class => 'btn btn-large btn-primary text-white'  %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

@@ -1,5 +1,5 @@
 class VisitsController < ApplicationController
-    before_action :find_estate, only: [:create, :edit, :update]
+    before_action :find_estate, only: [:create, :edit, :update, :destroy]
 
     def create
         @visit = Visit.new(visit_params)
@@ -19,8 +19,14 @@ class VisitsController < ApplicationController
         @visit = Visit.find(params[:id])
         @visit.update(visit_params)
         redirect_to @estate
-        
     end
+
+    def destroy
+        @visit = Visit.find(params[:id])
+        @visit.destroy
+        redirect_to @estate
+    end
+        
 
     private
     def find_estate
