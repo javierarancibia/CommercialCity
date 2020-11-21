@@ -1,5 +1,5 @@
 class VisitsController < ApplicationController
-    before_action :find_estate, only: :create
+    before_action :find_estate, only: [:create, :edit, :update]
 
     def create
         @visit = Visit.new(visit_params)
@@ -10,23 +10,16 @@ class VisitsController < ApplicationController
     end
 
     def edit
-        @estate = Estate.find(params[:id])
         @visit = Visit.find(params[:id])
+        @visit.user_id = current_user.id
     end
     
     
     def update
-        @estate = Estate.find(params[:id])
         @visit = Visit.find(params[:id])
-        respond_to do |format|
-            if @visit.update(visit_params)
-              format.html { redirect_to estate_path, notice: 'visit was successfully updated.' }
-              format.json { render :show, status: :ok, location: @visit }
-            else
-              format.html { render :edit }
-              format.json { render json: @visit.errors, status: :unprocessable_entity }
-            end
-          end
+        @visit.update(visit_params)
+        redirect_to @estate
+        
     end
 
     private

@@ -150,7 +150,8 @@
 
   <%= form_with(model: [ @estate, @visit ], local: true) do |f| %>
       <div>
-          <%= f.text_field :content, placeholder: 'Informacion' %>
+          <%= f.label :content, "Contenido" %>
+          <%= f.text_field :content %>
       </div>
 
       <div>
@@ -188,7 +189,7 @@
         <td><%= visit.start %></td>
         <td><%= visit.end %></td>
   
-        <td><%= link_to 'Edita la fecha', edit_estate_visit_path(visit) %></td>
+        <td><%= link_to 'Edita la fecha', edit_estate_visit_path(@estate, visit) %></td>
         <td><%#= link_to 'Elimina la fecha', visit, method: :delete, data: { confirm: '¿Estas seguro?' } %></td>
       </tr>
     <% end %>
