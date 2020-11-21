@@ -2,23 +2,29 @@
  <h1 class="mt-5 text-center">Edita la fecha de disponibilidad</h1>
  
     <%= form_with(model: @visit, url: update_visit_path, method: :post, local: true) do |f| %>
+        <div class="form-row text-center h4 my-5">
+      <div class="form-group col-md-4">
         <div>
-            <%= f.text_field :content, placeholder: 'Informacion' %>
+            <%= f.label :content, "Observaciones" %>
+            <%= f.text_field :content, class:"form-control" %>
         </div>
-
+      </div>
+      <div class="form-group col-md-4">
         <div>
             <%= f.label :start, "Inicio" %>
-            <%= f.datetime_field :start %>
+            <%= f.datetime_field :start, class:"form-control" %>
         </div>
-
+      </div>
+      <div class="form-group col-md-4">
         <div>
             <%= f.label :end, "Termino" %>
-            <%= f.datetime_field :end %>
+            <%= f.datetime_field :end, class:"form-control" %>
         </div>
-
-        <div>
-            <%= f.submit "Cambiar fecha" %>
-        </div>
+      </div>
+       
+          <%= f.submit "Cambiar fechas", class:"btn btn-primary btn-lg text-center" %>
+        
+    </div>
 
     <% end %>
 
