@@ -120,14 +120,13 @@ class EstatesController < ApplicationController
   end
 
   def delete_photo
-    # @types = Type.all
-    # @categories = Category.all
-    # @locations = Location.all
     @att = ActiveStorage::Attachment.find_by(blob_id: params[:id])
     # @estate = @att.record
-    @att.purge
+    # @att.purge
+    @att&.purge
     # render :edit, location: @estate
     redirect_back(fallback_location: request.referer)
+    
   end
 
   private
