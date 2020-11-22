@@ -4,9 +4,9 @@
   <!-- Navbar de usuario -->
   <% if user_signed_in? %>
         <%if current_user.profile == nil %>
-          <%= link_to  "Optimiza tu perfil", new_profile_path, class: "mt-5 mx-5 text-white font-weight-bold h5" %>
+          <%= link_to  "Optimiza tu Panel de Contacto", new_profile_path, class: "mt-5 mx-5 text-white font-weight-bold h5" %>
         <% else %>
-          <%= link_to  "Tu Perfil", current_user.profile, class: "mt-5 mx-5 text-white font-weight-bold h5" %>
+          <%= link_to  "Tu Panel de Contacto", current_user.profile, class: "mt-5 mx-5 text-white font-weight-bold h5" %>
         <% end %>
       <%= link_to  "Mis propiedades", estate_dashboard_path, class: "mt-5 mx-5 text-white font-weight-bold h5" %>
       <%= link_to  "Mis Propiedades Favoritas", estate_favorite_path, class: "mt-5 mx-5 text-white font-weight-bold h5" %>
@@ -45,10 +45,10 @@
   
 
   <!-- Muestra al azar de 6 propiedades publicadas. Cambian al hacer refresh a la pagina -->    
-  <h2 class="text-center my-5">Algunas propiedad publicadas</h2>
+  <h2 class="text-center my-5 counter-title">Algunas propiedad publicadas</h2>
   <div class="row row-cols-1 row-cols-md-3">
     <% @estates_random.each do |estate| %>
-        <div class="col-md-4 text-center">
+        <div class="col-md-4 text-center mb-5">
           <div class="card h-100">
             <%= estate.photos.first.nil? ? image_tag("house.jpg", size: "345x250") : image_tag(estate.photos.first, size: "345x250") %>
             <div class="card-body">
@@ -74,6 +74,7 @@
   </div>
 
   <!-- Contador de tipos de propiedad con sus logos-->
+  <h2 class="text-center my-5 counter-title" style="font-family: 'Roboto', sans-serif;">Todas nuestras propiedades</h2>
   <div class=" col my-5 font-weight-bold">
     <div class="row">
       <% @categories.each do |cat| %>
@@ -101,5 +102,9 @@
          <div class="col-md-1 mx-auto text-center"><%= cat.estates.count %></div>
     <% end %>
   </div>
+</div>
+
+<div class="mt-5">
+    <%= render 'footer' %>
 </div>
 

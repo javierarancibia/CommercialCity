@@ -195,8 +195,8 @@
     <% @visit_estate.each do |visit| %>
       <tr>
         <td class="text-center"><%= visit.content %></td>
-        <td class="text-center"><%= visit.start.strftime("%m/%d/%Y a las %H:%M") %></td>
-        <td class="text-center"><%= visit.end.strftime("%m/%d/%Y a las %H:%M") %></td>
+        <td class="text-center"><%= visit.start.strftime("%d/%m/%Y a las %H:%M") %></td>
+        <td class="text-center"><%= visit.end.strftime("%d/%m/%Y a las %H:%M") %></td>
 
         <% if current_user.id == @estate.user_id %>
           <td><%= link_to 'Edita la fecha', edit_estate_visit_path(@estate, visit), :class => 'btn btn-large btn-primary text-white' %></td>

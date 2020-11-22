@@ -31,38 +31,48 @@
   </div>
 </div>
 
-<table class="table table-striped container my-3"> 
-  <thead>
-    <tr>
-      <th>Tipo</th>
-      <th>Categoria</th>
-      <th>Ubicacion</th>
-      <th>Ciudad</th>
-      <th>Precio</th>
-      <th>Dormitorios</th>
-      <th>Baños</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% if @likes.empty? %>
+  <h2 class="text-center my-5"><%= "No tienes propiedades favoritas" %></h2>
+  <i class="fas fa-times-circle fa-5x d-flex justify-content-center align-items-center"></i>
+<% else %>
 
-  <tbody>
-    <% @likes.each do |like| %>
+  <table class="table table-striped container my-3"> 
+    <thead>
       <tr>
-        <td><%= like.estate.category.name %></td>
-        <td><%= like.estate.type.mode %></td>
-        <td><%= like.estate.address %></td>
-        <td><%= like.estate.location.name %></td>
-        <td><%= like.estate.price %></td>
-        <td><%= like.estate.rooms %></td>
-        <td><%= like.estate.bathrooms %></td>
-        <td><%= link_to  "Mostrar", estate_path(like.estate_id) %></td>
-        <% if like.estate.photos.empty? %>
-          <td><%= image_tag("house.jpg", size: "120x80") %></td>
-        <% else %>
-          <td><%= image_tag like.estate.photos[0].variant(resize: '120x80') %></td>
-        <% end %>
+        <th>Tipo</th>
+        <th>Categoria</th>
+        <th>Ubicacion</th>
+        <th>Ciudad</th>
+        <th>Precio</th>
+        <th>Dormitorios</th>
+        <th>Baños</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @likes.each do |like| %>
+        <tr>
+          <td><%= like.estate.category.name %></td>
+          <td><%= like.estate.type.mode %></td>
+          <td><%= like.estate.address %></td>
+          <td><%= like.estate.location.name %></td>
+          <td><%= like.estate.price %></td>
+          <td><%= like.estate.rooms %></td>
+          <td><%= like.estate.bathrooms %></td>
+          <td><%= link_to  "Mostrar", estate_path(like.estate_id) %></td>
+          <% if like.estate.photos.empty? %>
+            <td><%= image_tag("house.jpg", size: "120x80") %></td>
+          <% else %>
+            <td><%= image_tag like.estate.photos[0].variant(resize: '120x80') %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<div class="mt-5">
+    <%= render 'footer' %>
+</div>
  
