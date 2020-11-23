@@ -45,7 +45,7 @@
   
 
   <!-- Muestra al azar de 6 propiedades publicadas. Cambian al hacer refresh a la pagina -->    
-  <h2 class="text-center my-5 counter-title">Algunas propiedad publicadas</h2>
+  <h2 class="text-center my-5 counter-title">Algunas propiedades publicadas</h2>
   <div class="row row-cols-1 row-cols-md-3">
     <% @estates_random.each do |estate| %>
         <div class="col-md-4 text-center mb-5">
@@ -54,7 +54,7 @@
             <div class="card-body">
               <h4 class="card-title"><%= estate.category.name %> en <%= estate.type.mode %></h4>
               <h5 class="text-secondary"><%= estate.location.name %>, Region <%= estate.location.region_number %></h5>
-              <p class="card-text"><%= estate.description %><br><h5><%= number_to_currency(estate.price, precision: 0) %></h5></p>
+              <p class="card-text"><%= estate.description.truncate(100) %><br><h5><%= number_to_currency(estate.price, precision: 0) %></h5></p>
                 <% if estate.rooms != nil %>
                   <strong class="text-secondary h5"><%= estate.rooms %></strong> <i class="fas fa-bed fa-2x mx-auto mt-2 align-bottom text-secondary"></i>
                 <% end %>

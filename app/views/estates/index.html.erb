@@ -3,18 +3,18 @@
 <div class="hero-image text-center">
   <!-- Navbar de usuario -->
   <% if user_signed_in? %>
-      <%= link_to  "Mis propiedades", estate_dashboard_path, class: "mt-3 mx-5 text-white font-weight-bold" %>
-      <%= link_to  "Mis Propiedades Favoritas", estate_favorite_path, class: "mt-3 mx-5 text-white font-weight-bold" %>
-      <%= link_to  "Cerrar Sesion", destroy_user_session_path, method: :delete, class: "mt-3 mx-3 text-white font-weight-bold" %>
-      <%= link_to  "Edita tu perfil", edit_user_registration_path, class: "mt-3 mx-5 text-white font-weight-bold" %>
-      <%= link_to 'Publica una propiedad', new_estate_path, class: "mt-3 mx-5 text-white font-weight-bold" %>
-      <%= link_to 'Inicio', root_path, class: "mt-3 mx-5 text-white font-weight-bold" %>
+      <%= link_to  "Mis propiedades", estate_dashboard_path, class: "mt-3 mx-5 text-white" %>
+      <%= link_to  "Mis Propiedades Favoritas", estate_favorite_path, class: "mt-3 mx-5 text-white" %>
+      <%= link_to  "Cerrar Sesion", destroy_user_session_path, method: :delete, class: "mt-3 mx-3 text-white" %>
+      <%= link_to  "Edita tu perfil", edit_user_registration_path, class: "mt-3 mx-5 text-white" %>
+      <%= link_to 'Publica una propiedad', new_estate_path, class: "mt-3 mx-5 text-white" %>
+      <%= link_to 'Inicio', root_path, class: "mt-3 mx-5 text-white" %>
       <span class="ml-5 text-white"><%= current_user.email %></span>
       <%#= image_tag(current_user.avatar_thumbnail, size: '70x70', class: "rounded-circle mx-5") %>
   <% else %>
-      <%= link_to  "Inicia Sesion", new_user_session_path, class: "mt-3 ml-3 text-white font-weight-bold" %>
-      <%= link_to  "Registrate", new_user_registration_path, class: "mt-3 ml-3 text-white font-weight-bold" %>
-      <%= link_to 'Inicio', root_path, class: "mt-3 mx-5 text-white font-weight-bold" %>
+      <%= link_to  "Inicia Sesion", new_user_session_path, class: "mt-3 ml-3 text-white" %>
+      <%= link_to  "Registrate", new_user_registration_path, class: "mt-3 ml-3 text-white" %>
+      <%= link_to 'Inicio', root_path, class: "mt-3 mx-5 text-white" %>
   <% end %>
 
   <!-- Jumbotron para titulo comercial de la plataforma -->

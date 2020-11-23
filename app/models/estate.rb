@@ -16,7 +16,7 @@ class Estate < ApplicationRecord
     validates :address, presence: true
     validates :type_id, presence: true
     validates :price, presence: true
-    validates :description, length: { maximum: 200 }
+    validates :description, length: { maximum: 550 }
 
 
 
