@@ -101,7 +101,7 @@
           <% @estate.photos.each do |photo| %>
             <%= image_tag(photo, size: '270x160') %>
             <% if photo.id != nil %>
-              <%= link_to  "Borrar", delete_photo_path(photo.id), method: :delete %>
+              <%= link_to  "Borrar", delete_photo_path(photo), method: :delete %>
             <% end %>
           <% end %>
         </div>
