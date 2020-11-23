@@ -120,7 +120,7 @@ class EstatesController < ApplicationController
   end
 
   def delete_photo
-    @att = ActiveStorage::Attachment.find_by(blob_id: params[:id])
+    @att = ActiveStorage::Attachment.find(params[:id])
     # @estate = @att.record
     @att.purge
     # render :edit, location: @estate
