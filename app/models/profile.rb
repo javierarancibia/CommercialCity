@@ -7,4 +7,5 @@ class Profile < ApplicationRecord
 
   validates :phone, length: { maximum: 12 }
   validates :secondary_number, length: { maximum: 12 }
+
 end

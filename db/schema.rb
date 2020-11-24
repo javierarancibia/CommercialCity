@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_19_031503) do
+ActiveRecord::Schema.define(version: 2020_11_24_015123) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2020_11_19_031503) do
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
-    t.integer "rate"
+    t.integer "rate", default: 0
     t.integer "user_id"
     t.integer "profile_id"
     t.datetime "created_at", null: false
@@ -80,8 +80,8 @@ ActiveRecord::Schema.define(version: 2020_11_19_031503) do
     t.integer "user_id"
     t.string "address"
     t.integer "price"
-    t.integer "rooms"
-    t.integer "bathrooms"
+    t.integer "rooms", default: 0
+    t.integer "bathrooms", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "parking", default: 0
