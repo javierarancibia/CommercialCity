@@ -104,7 +104,7 @@ Tras avance de tareas planificadas, se modifica el modelamiento inicial consider
 
 ## Contacto
 
-Javier Arancibia R. - https://github.com/javierarancibia - javier.arancibia.reyes@hotmail
+Javier Arancibia R. - https://github.com/javierarancibia - javier.arancibia.reyes@hotmail.com
 
 Project Link: https://github.com/javierarancibia/hito-1-proyecto-final/
 
