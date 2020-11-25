@@ -15,10 +15,10 @@
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Comenzar</a>
+      <a href="#Modelamiento-de-base-de-datos-inicial">Modelamiento</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisitos</a></li>
-        <li><a href="#installation">Instalacion</a></li>
+        <li><a href="#Modelamiento-de-base-de-datos-inicial">Modelamiento de base de datos inicial</a></li>
+        <li><a href="#Modelamiento-actualizado">Modelamiento actualizado</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
