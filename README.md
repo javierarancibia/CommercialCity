@@ -48,6 +48,10 @@ Las principales fortalezas del proyecto:
 * [Bootstrap](https://getbootstrap.com) - Framework CSS
 * [JQuery](https://jquery.com) - Libreria JS
 * [Ruby on Rails](https://rubyonrails.org) - Framework FullStack 
+* [Mailgun](https://www.mailgun.com) - Gestor API de correos electronicos
+* [ActiveAdmin Gem](https://activeadmin.info/) - Gema Gestor de Administracion
+* [Yarn](https://yarnpkg.com/) - Gestor de Dependencias
+* [Ransack](https://github.com/activerecord-hackery/ransack) - Motor de busqueda
 
 
 
