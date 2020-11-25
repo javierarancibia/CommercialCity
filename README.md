@@ -9,7 +9,7 @@
   <summary>Contenidos</summary>
   <ol>
     <li>
-      <a href="#about-the-project">Acerca del proyecto</a>
+      <a href="#acerca-de-CommercialCity">Acerca del proyecto</a>
       <ul>
         <li><a href="#built-with">Recursos</a></li>
       </ul>
