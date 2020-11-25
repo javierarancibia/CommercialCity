@@ -72,7 +72,7 @@ Tras avance de tareas planificadas, se modifica el modelamiento inicial consider
 
 ### Primer borrador de historias de usuario para establecer las funcionalidades básicas de la aplicacion Commercial City, destinada a conformar una red social entre corredores o usuarios que tienen interes en vender su propiedad. 
 
-Historias de Usuario
+## Historias de Usuario
 
 1.- El usuario Francisco entra a la app para buscar propiedades como visita. Le interesa solo buscar propiedades por lo que tiene libre acceso al registro de propiedades por medio de filtros de busqueda: por venta o arriendo, ubicacion, tipo de propiedad y rango de valores. Esto arroja un listado de propiedades con una foto en orden descendente por fecha de creacion.
 
