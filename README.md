@@ -39,3 +39,13 @@ Historias de Usuario
 8.- Bajo el filtro de buscadores se encuentran cartas informativas con articulos sobre propiedades, tipo blog, con modales. 
 
 9.- En pagina principal aparecen iconos con tipos de propiedades y contadores con la cantidad de propiedades publicadas. 
+
+
+### Interfaz en base a modulos para el usuario
+
+![panel](https://user-images.githubusercontent.com/69688629/100171455-8d4c4700-2ea5-11eb-8068-837afe94850f.jpeg)
+
+### Interfaz en base a modulos para el usuario
+
+
+![favorites](https://user-images.githubusercontent.com/69688629/100171602-963d1880-2ea5-11eb-9e90-8869f676b1d8.jpeg)
