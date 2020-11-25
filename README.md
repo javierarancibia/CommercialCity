@@ -23,10 +23,7 @@
     </li>
     <li><a href="#Historias-de-Usuario">Historias de Usuario</a></li>
     <li><a href="#Interfaz-en-base-a-modulos-para-el-usuario">Interfaz en base a modulos para el usuario</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contacto">Contacto</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
