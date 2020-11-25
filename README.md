@@ -22,7 +22,7 @@
       </ul>
     </li>
     <li><a href="#Historias-de-Usuario">Historias de Usuario</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#Interfaz-en-base-a-modulos-para-el-usuario">Interfaz en base a modulos para el usuario</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -50,9 +50,9 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 
 ### Recursos:
 
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-* [Ruby on Rails](https://rubyonrails.org)
+* [Bootstrap](https://getbootstrap.com) - Framework CSS
+* [JQuery](https://jquery.com) - Libreria JS
+* [Ruby on Rails](https://rubyonrails.org) - Framework FullStack 
 
 
 
@@ -91,10 +91,6 @@ Tras avance de tareas planificadas, se modifica el modelamiento inicial consider
 8.- Bajo el filtro de buscadores se encuentran cartas informativas con articulos sobre propiedades, tipo blog, con modales. 
 
 9.- En pagina principal aparecen iconos con tipos de propiedades y contadores con la cantidad de propiedades publicadas. 
-
-
-### Interfaz en base a modulos para el usuario
-
 
 
 ### Interfaz en base a modulos para el usuario
