@@ -25,7 +25,7 @@
     <li><a href="#Interfaz-en-base-a-modulos-para-el-usuario">Interfaz en base a modulos para el usuario</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contacto">Contacot</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
@@ -97,6 +97,14 @@ Tras avance de tareas planificadas, se modifica el modelamiento inicial consider
 
 
 ![favorites](https://user-images.githubusercontent.com/69688629/100171602-963d1880-2ea5-11eb-9e90-8869f676b1d8.jpeg)
+
+
+
+## Contacto
+
+Javier Arancibia R. - https://github.com/javierarancibia - javier.arancibia.reyes@hotmail.com@hotmail.com
+
+Project Link: https://github.com/javierarancibia/hito-1-proyecto-final/
 
 
 
