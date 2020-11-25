@@ -11,7 +11,7 @@
     <li>
       <a href="#acerca-de-CommercialCity">Acerca del proyecto</a>
       <ul>
-        <li><a href="#built-with">Recursos</a></li>
+        <li><a href="#Recursos">Recursos</a></li>
       </ul>
     </li>
     <li>
@@ -48,7 +48,7 @@ Of course, no one template will serve all projects since your needs may be diffe
 
 A list of commonly used resources that I find helpful are listed in the acknowledgements.
 
-### App construida con:
+### Recursos:
 
 * [Bootstrap](https://getbootstrap.com)
 * [JQuery](https://jquery.com)
