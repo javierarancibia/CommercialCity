@@ -34,16 +34,14 @@
 
 ![panel](https://user-images.githubusercontent.com/69688629/100171455-8d4c4700-2ea5-11eb-8068-837afe94850f.jpeg)
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+El proyecto nace orientado a la siempre dinamica industria inmobiliaria, basándose en la interaccion entre los distintos actores del rubro, principalmente generando una plataforma digital que se basa tanto en la publicacion libre de propiedades y en la carta de presentacion de quien publica, teniendo la oportunidad de compartir las experiencias entre los usuarios en el arriendo o venta de propiedades.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should element DRY principles to the rest of your life :smile:
+Las principales fortalezas del proyecto:
+* Libertad de publicacion, fortaleciendo la carta de presentacion de quien publica.
+* Comunidad que se evalua mutuamente en base a sus experiencias como usuario y producto.
+* Arquitectura en base a dashboards o modulos segun las necesidades dentro de la plataforma. 
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have have contributed to expanding this template!
 
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
 
 ### Recursos:
 
