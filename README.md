@@ -52,6 +52,9 @@ Las principales fortalezas del proyecto:
 * [ActiveAdmin Gem](https://activeadmin.info/) - Gema Gestor de Administracion
 * [Yarn](https://yarnpkg.com/) - Gestor de Dependencias
 * [Ransack](https://github.com/activerecord-hackery/ransack) - Motor de busqueda
+* [Chartkick](https://www.chartkick.com/) - Generador de graficos
+* [Amazon AWS/S3](https://aws.amazon.com/) - Cloud Service Imagenes
+
 
 
 
