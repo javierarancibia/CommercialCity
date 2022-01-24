@@ -11,7 +11,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1.json
   def show
     @comments = Comment.where("profile_id = ?", params[:id])
-    @rate = @profile.comments.average(:rate)
+    @rate = @profile.comments.average(:rate) 
     @estates = Estate.where(user_id: @profile.user_id)
     @estates_published = Estate.joins(:category).group('categories.name').where(user_id: @profile.user_id).count()
   end

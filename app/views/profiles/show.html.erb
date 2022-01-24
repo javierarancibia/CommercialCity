@@ -137,7 +137,7 @@
               </div>
             
         <div>
-        <h2 class="text-primary my-4">Este usuario tiene una puntuacion de: <%= @rate %> / 10</h2>
+          <h2 class="text-primary my-4">Este usuario tiene una puntuacion de: <%= @rate == nil ? 0 : @rate.round(2) %> / 10</h2>
         </div>
         
       <!-- Input de comentarios y calificaciones -->
