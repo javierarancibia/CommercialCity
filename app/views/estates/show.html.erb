@@ -107,14 +107,17 @@
 
       <div class="row border-top border-bottom mt-5 mb-4 pt-4 pb-4">
         <div class="col-6 text-left">
-          <% if current_user.id == @estate.user_id %>
-            <%= @estate.likes.count %> <%= (@estate.likes.count) == 1 ? 'Usuario interesado en tu propiedad' : 'Usuarios interesados en tu propiedad'%>
-          <% end %>
-          
-          <% if @pre_like %>
-            <%= button_to 'Ya no me interesa', estate_like_path(@estate, @pre_like), method: :delete, class:"btn btn-primary text-white mt-3" %>
-          <% else %>
-            <%= button_to 'Me gusta', estate_likes_path(@estate), method: :post, class:"btn btn-primary text-white mt-3" %>
+
+          <% if current_user %>
+            <% if current_user.id == @estate.user_id %>
+              <%= @estate.likes.count %> <%= (@estate.likes.count) == 1 ? 'Usuario interesado en tu propiedad' : 'Usuarios interesados en tu propiedad'%>
+            <% end %>
+            
+            <% if @pre_like %>
+              <%= button_to 'Ya no me interesa', estate_like_path(@estate, @pre_like), method: :delete, class:"btn btn-primary text-white mt-3" %>
+            <% else %>
+              <%= button_to 'Me gusta', estate_likes_path(@estate), method: :post, class:"btn btn-primary text-white mt-3" %>
+            <% end %>
           <% end %>
         </div>
         
@@ -124,14 +127,16 @@
     </div>
   </div>
 
-        <div class="col-4 h5">
-            <%#= render "estates/agent_details" %>
-            <%#= link_to  "Perfil del usuario", @estate.user.profile, class:"btn btn-success text-white" %>
-            <%= link_to 'Inicio', root_path %>
-            <% if current_user.id == @estate.user_id %> |
-              <%= link_to 'Edita la propiedad', edit_estate_path(@estate) %> 
+      <% if current_user %>
+          <div class="col-4 h5">
+              <%#= render "estates/agent_details" %>
+              <%#= link_to  "Perfil del usuario", @estate.user.profile, class:"btn btn-success text-white" %>
+              <%= link_to 'Inicio', root_path %>
+              <% if current_user.id == @estate.user_id %> |
+                <%= link_to 'Edita la propiedad', edit_estate_path(@estate) %> 
+              <% end %>
             <% end %>
-        </div>
+          </div>
         </div>
     </div>
 
@@ -150,34 +155,36 @@
 <div class="container my-5" id="calendar"></div>
 <div class="container my-5">
 
-<% if current_user.id == @estate.user_id %>
-  <h3 class="text-center my-5">Agrega fechas de visita disponibles para mayor informacion</h3>
-  <%= form_with(model: [ @estate, @visit ], local: true) do |f| %>
-    <div class="form-row text-center h4">
-      <div class="form-group col-md-4">
-        <div>
-            <%= f.label :content, "Observaciones" %>
-            <%= f.text_field :content, class:"form-control" %>
-        </div>
-      </div>
-      <div class="form-group col-md-4">
-        <div>
-            <%= f.label :start, "Inicio" %>
-            <%= f.datetime_field :start, class:"form-control" %>
-        </div>
-      </div>
-      <div class="form-group col-md-4">
-        <div>
-            <%= f.label :end, "Termino" %>
-            <%= f.datetime_field :end, class:"form-control" %>
-        </div>
+<% if current_user %>
+    <% if current_user.id == @estate.user_id %>
+      <h3 class="text-center my-5">Agrega fechas de visita disponibles para mayor informacion</h3>
+      <%= form_with(model: [ @estate, @visit ], local: true) do |f| %>
+        <div class="form-row text-center h4">
+          <div class="form-group col-md-4">
+            <div>
+                <%= f.label :content, "Observaciones" %>
+                <%= f.text_field :content, class:"form-control" %>
+            </div>
+          </div>
+          <div class="form-group col-md-4">
+            <div>
+                <%= f.label :start, "Inicio" %>
+                <%= f.datetime_field :start, class:"form-control" %>
+            </div>
+          </div>
+          <div class="form-group col-md-4">
+            <div>
+                <%= f.label :end, "Termino" %>
+                <%= f.datetime_field :end, class:"form-control" %>
+            </div>
+          </div>
+
+          
+            <%= f.submit "Crear fecha", class:"btn btn-primary btn-lg text-center" %>
+          
       </div>
 
-        
-          <%= f.submit "Crear fecha", class:"btn btn-primary btn-lg text-center" %>
-        
-    </div>
-
+    <% end %>
   <% end %>
 <% end %>
 </div>
@@ -200,9 +207,11 @@
         <td class="text-center align-middle"><%= visit.start.strftime("%d/%m/%Y a las %H:%M") %></td>
         <td class="text-center align-middle"><%= visit.end.strftime("%d/%m/%Y a las %H:%M") %></td>
 
-        <% if current_user.id == @estate.user_id %>
-          <td><%= link_to 'Edita la fecha', edit_estate_visit_path(@estate, visit), :class => 'btn btn-large btn-primary text-white mt-3' %></td>
-          <td><%= link_to 'Borra la fecha', estate_visit_path(@estate, visit), :method => 'delete', :class => 'btn btn-large btn-primary text-white mt-3'  %></td>
+        <% if current_user %>
+          <% if current_user.id == @estate.user_id %>
+            <td><%= link_to 'Edita la fecha', edit_estate_visit_path(@estate, visit), :class => 'btn btn-large btn-primary text-white mt-3' %></td>
+            <td><%= link_to 'Borra la fecha', estate_visit_path(@estate, visit), :method => 'delete', :class => 'btn btn-large btn-primary text-white mt-3'  %></td>
+          <% end %>
         <% end %>
       </tr>
     <% end %>
