@@ -79,10 +79,12 @@
                   </li>
                 </ul>
                 <div class="container mt-5">
-                  <% if current_user.id == @profile.user_id %>
-                    <%= link_to  "Edita tu Panel de Usuario", edit_profile_path %> |
+                  <% if current_user %>
+                    <% if current_user.id == @profile.user_id %>
+                      <%= link_to  "Edita tu Panel de Usuario", edit_profile_path %> |
+                    <% end %>
+                    <%= link_to 'Volver a Inicio', root_path, class:"text-primary" %>
                   <% end %>
-                  <%= link_to 'Volver a Inicio', root_path, class:"text-primary" %>
                 </div>
               </div>
             </div>
@@ -142,6 +144,7 @@
         
       <!-- Input de comentarios y calificaciones -->
 
+      <% if current_user %>
         <% if current_user.id != @profile.user_id %>
             <h4 class="ml-2 mt-5 mb-3 ">Ingresa tu experiencia con este usuario</h4>
 
@@ -160,6 +163,7 @@
                       <%= f.submit "Guardar", class: "btn btn-primary ml-2" %>
                 <% end %>
             <% end %>
+      <% end %>
         
 
 
