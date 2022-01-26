@@ -1,3 +1,43 @@
+  <% if user_signed_in? %>
+          <%if current_user.profile == nil %>
+            <%= link_to  "Optimiza tu Panel de Contacto", new_profile_path, class: "mt-5 mx-5 text-black h5 text-decoration-none" %>
+          <% else %>
+            <%= link_to  "Tu Panel de Contacto", current_user.profile, class: "mt-5 mx-5 text-black h5 text-decoration-none" %>
+          <% end %>
+        <%= link_to  "Mis propiedades", estate_dashboard_path, class: "mt-5 mx-5 text-black h5 text-decoration-none" %>
+        <%= link_to  "Mis Propiedades Favoritas", estate_favorite_path, class: "mt-5 mx-5 text-black h5" %>
+        <%= link_to  "Cerrar Sesion", destroy_user_session_path, method: :delete, class: "mt-4 mx-4 text-black h5" %>
+        <%= link_to  "Edita tu perfil", edit_user_registration_path, class: "mt-5 mx-5 text-black h5" %>
+        <%= link_to 'Publica una propiedad', new_estate_path, class: "mt-5 mx-5 text-black h5" %>
+        <span class="ml-5 text-white"><%= current_user.email %></span>
+          <% if current_user.avatar.attached? %>
+            <%= image_tag current_user.avatar, size: '70x70', class: "rounded-circle mx-5" %>
+          <% else %>
+            <%= image_tag("default_profileB.jpg", size: '70x70', class: "rounded-circle mx-5") %>
+          <% end %>
+
+        <div class="hero-text">
+          <h1 class="font-weight-bold">CommercialCity</h1>
+          <h3 class="mb-3">Portal de Propiedades en Venta con Subsidio Habitacional</h3>
+          <%= render 'search_form' %>
+        </div>
+  </div>
+
+    <% else %>
+        <div class="text-center" >
+          <%= link_to "Inicia Sesion", new_user_session_path, class: "text ml-3 mt-5 text-black text-decoration-none" %>
+          <%= link_to  "Registrate", new_user_registration_path, class: "text ml-3 mt-5 text-black text-decoration-none" %>
+        </div>
+        <div class="hero-text">
+          <h1 class="font-weight-bold">Subsidio</h1>
+          <h3 class="my-4">Portal de Propiedades en Venta Solo con Subsidio Habitacional</h3>
+        
+        </div>
+    <% end %>
+
+
+
+
 <div class="container show-header">
   <section class="py-5">
     <span class="display-4"><%= @estate.type.mode %> de <%= @estate.category.name %></span><br>

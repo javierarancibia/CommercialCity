@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.text:hover {
+  background-color: transparent
+}
+
+.text {
+  color: #ffffff;
+  font-size: 20px;
+}
+
 .property-main-photo {
     height: 500px;
     background-size: cover;
@@ -79,7 +88,7 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), image-url("hero3.jpg");
 
   /* Set a specific height */
-  height: 50%;
+  height: 60%;
 
   /* Position and center the image to scale nicely on all screens */
   background-position: center;
@@ -268,11 +277,7 @@ body {
   left: 55%
 }
 
-.text {
-  color: #ffffff;
-  font-size: 14px;
-  margin-top: -10px
-}
+
 
 #legal {
   width: 14%;
@@ -415,9 +420,7 @@ body {
       left: 37%
   }
 
-  .text {
-      font-size: 13px
-  }
+  
 
   #legal {
       position: relative;
@@ -452,7 +455,7 @@ body {
 }
     .counter-title{
       color: #537592;
-      font-size: 50px
+      font-size: 30px
     }
 
 

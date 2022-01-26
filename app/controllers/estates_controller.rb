@@ -42,6 +42,8 @@ class EstatesController < ApplicationController
     @user = @estate.user
     # @pre_like = @estate.likes.find { |like| like.user_id == current_user.id}
     @visit = Visit.new
+    @q = Estate.ransack(params[:q])
+    @estates = @q.result.includes(:location, :category, :type)
     
     @visit_estate = Visit.where(estate_id: @estate.id)
 

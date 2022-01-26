@@ -1,14 +1,14 @@
   
   
-<div class="hero-image text-center">
+<div class="hero-image">
   <!-- Navbar de usuario -->
   <% if user_signed_in? %>
         <%if current_user.profile == nil %>
-          <%= link_to  "Optimiza tu Panel de Contacto", new_profile_path, class: "mt-5 mx-5 text-white h5" %>
+          <%= link_to  "Optimiza tu Panel de Contacto", new_profile_path, class: "mt-5 mx-5 text-white h5 text-decoration-none" %>
         <% else %>
-          <%= link_to  "Tu Panel de Contacto", current_user.profile, class: "mt-5 mx-5 text-white h5" %>
+          <%= link_to  "Tu Panel de Contacto", current_user.profile, class: "mt-5 mx-5 text-white h5 text-decoration-none" %>
         <% end %>
-      <%= link_to  "Mis propiedades", estate_dashboard_path, class: "mt-5 mx-5 text-white h5" %>
+      <%= link_to  "Mis propiedades", estate_dashboard_path, class: "mt-5 mx-5 text-white h5 text-decoration-none" %>
       <%= link_to  "Mis Propiedades Favoritas", estate_favorite_path, class: "mt-5 mx-5 text-white h5" %>
       <%= link_to  "Cerrar Sesion", destroy_user_session_path, method: :delete, class: "mt-4 mx-4 text-white h5" %>
       <%= link_to  "Edita tu perfil", edit_user_registration_path, class: "mt-5 mx-5 text-white h5" %>
@@ -29,10 +29,12 @@
 </div>
 
   <% else %>
-      <%= link_to "Inicia Sesion", new_user_session_path, class: "mt-5 ml-3 text-white" %>
-      <%= link_to  "Registrate", new_user_registration_path, class: "mt-5 ml-3 text-white" %>
+      <div class="text-center" >
+        <%= link_to "Inicia Sesion", new_user_session_path, class: "text ml-3 text-white text-decoration-none" %>
+        <%= link_to  "Registrate", new_user_registration_path, class: "text ml-3 text-white text-decoration-none" %>
+      </div>
       <div class="hero-text">
-        <h1 class="font-weight-bold mt-5">Subsidio</h1>
+        <h1 class="font-weight-bold">Subsidio</h1>
         <h3 class="my-4">Portal de Propiedades en Venta Solo con Subsidio Habitacional</h3>
             <%
 =begin%>
@@ -67,7 +69,7 @@
   
 
   <!-- Muestra al azar de 6 propiedades publicadas. Cambian al hacer refresh a la pagina -->    
-  <h2 class="text-center my-5 counter-title">Algunas propiedades publicadas</h2>
+  <h2 class="text-center my-5 counter-title">Encuentra casas y departamentos en arriendo y venta</h2>
   <div class="row row-cols-1 row-cols-md-3">
     <% @estates_random.each do |estate| %>
         <div class="col-md-4 text-center mb-5">
