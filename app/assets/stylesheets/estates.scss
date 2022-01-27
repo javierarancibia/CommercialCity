@@ -8,7 +8,7 @@
 
 .text {
   color: #ffffff;
-  font-size: 20px;
+  font-size: 5px;
 }
 
 .property-main-photo {
@@ -89,6 +89,20 @@ body {
 
   /* Set a specific height */
   height: 60%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-image-show-estate {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), image-url("hero3.jpg");
+
+  /* Set a specific height */
+  height: 10%;
 
   /* Position and center the image to scale nicely on all screens */
   background-position: center;

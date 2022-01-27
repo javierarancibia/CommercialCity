@@ -13,6 +13,7 @@ class EstatesController < ApplicationController
     # @locations = Location.all
     # @types = Type.all
     # @categories = Category.all
+    # @estate.punch(request)
   end
 
   def home

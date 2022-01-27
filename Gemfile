@@ -30,6 +30,7 @@ gem 'omniauth-facebook'
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
 gem 'ransack'
+gem "punching_bag"
 gem 'aws-sdk-s3'
 gem 'chartkick'
 gem 'mailgun-ruby'

@@ -2,30 +2,60 @@
   
 <div class="hero-image">
   <!-- Navbar de usuario -->
-  <% if user_signed_in? %>
-        <%if current_user.profile == nil %>
-          <%= link_to  "Optimiza tu Panel de Contacto", new_profile_path, class: "mt-5 mx-5 text-white h5 text-decoration-none" %>
-        <% else %>
-          <%= link_to  "Tu Panel de Contacto", current_user.profile, class: "mt-5 mx-5 text-white h5 text-decoration-none" %>
-        <% end %>
-      <%= link_to  "Mis propiedades", estate_dashboard_path, class: "mt-5 mx-5 text-white h5 text-decoration-none" %>
-      <%= link_to  "Mis Propiedades Favoritas", estate_favorite_path, class: "mt-5 mx-5 text-white h5" %>
-      <%= link_to  "Cerrar Sesion", destroy_user_session_path, method: :delete, class: "mt-4 mx-4 text-white h5" %>
-      <%= link_to  "Edita tu perfil", edit_user_registration_path, class: "mt-5 mx-5 text-white h5" %>
-      <%= link_to 'Publica una propiedad', new_estate_path, class: "mt-5 mx-5 text-white h5" %>
-      <span class="ml-5 text-white"><%= current_user.email %></span>
-      <%#= image_tag(current_user.avatar_thumbnail, size: '70x70', class: "rounded-circle mx-5") || image_tag("default_profileB.jpg") %>
-        <% if current_user.avatar.attached? %>
-          <%= image_tag current_user.avatar, size: '70x70', class: "rounded-circle mx-5" %>
-        <% else %>
-          <%= image_tag("default_profileB.jpg", size: '70x70', class: "rounded-circle mx-5") %>
-        <% end %>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col mt-3">
+      <% if user_signed_in? %>
 
-      <div class="hero-text">
-        <h1 class="font-weight-bold">CommercialCity</h1>
-        <h3 class="mb-3">Portal de Propiedades en Venta con Subsidio Habitacional</h3>
-        <%= render 'search_form' %>
+        <button type="button" class="btn btn-outline-light"><%= link_to 'Publica una propiedad', new_estate_path, class: "mt-5 mx-5 text-white" %></button>
+        
       </div>
+
+      <div class="col mt-3">
+        <%#= image_tag(current_user.avatar_thumbnail, size: '70x70', class: "rounded-circle mx-5") || image_tag("default_profileB.jpg") %>
+        <div class="dropdown">
+          <button class="btn btn-white text-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= current_user.first_name %>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item">
+              <%if current_user.profile == nil %>
+                <%= link_to  "Optimiza tu Panel de Contacto", new_profile_path, class: "mt-5 mx-2 text-black text-decoration-none" %>
+              <% else %>
+                <%= link_to  "Tu Panel de Contacto", current_user.profile, class: "mt-5 mx-2 text-black text-decoration-none" %>
+              <% end %>
+            </a>
+            <a class="dropdown-item"><%= link_to  "Mis propiedades", estate_dashboard_path, class: "mt-5 mx-2 text-black text-decoration-none" %></a>
+            <a class="dropdown-item"><%= link_to  "Mis Propiedades Favoritas", estate_favorite_path, class: "mt-5 mx-2 text-black" %></a>
+            <a class="dropdown-item"><%= link_to  "Edita tu perfil", edit_user_registration_path, class: "mt-5 mx-2 text-black" %></a>
+            <a class="dropdown-item"><%= link_to  "Cerrar Sesion", destroy_user_session_path, method: :delete, class: "mt-5 mx-2 text-black" %></a>
+            <a class="dropdown-item"><span class="mx-2 text-black"><%= current_user.email %></a></span>
+          </div>
+        </div>
+        
+          
+        <%
+=begin%>
+ <% if current_user.avatar.attached? %>
+          <%= image_tag current_user.avatar, size: '50x50', class: "rounded-circle mx-5" %>
+        <% else %>
+          <%= image_tag("default_profileB.jpg", size: '50x50', class: "rounded-circle mx-5") %>
+        <% end %> 
+<%
+=end%>
+        
+        
+      </div>  
+      </div>
+        
+        
+
+        <div class="hero-text">
+          <h1 class="font-weight-bold">SocialHouse</h1>
+          <h3 class="mb-3">Portal de Propiedades en Venta con Subsidio Habitacional</h3>
+          <%= render 'search_form' %>
+        </div>
+  </div>
 </div>
 
   <% else %>
